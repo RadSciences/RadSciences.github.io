@@ -12,8 +12,8 @@ export default function About() {
         {/* 텍스트 내용 */}
         <div className={styles.textContent}>
           <p className={styles.description}>
-            여기에 회사에 대한 자세한 설명을 적으세요. 
-            우리의 비전과 목표, 그리고 팀원들의 열정을 담은 문구가 들어갈 자리입니다.
+            회사 설명설명입니다. 회사 설명! 
+            우리의 비전과 목표 설명설명
           </p>
         </div>
       </div>
