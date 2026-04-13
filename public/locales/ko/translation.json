@@ -1,0 +1,14 @@
+{
+  "header": {
+    "services": "서비스",
+    "projects": "프로젝트",
+    "about": "회사소개",
+    "contact": "문의"
+  },
+  "highlight": {
+    "title": "Rad Science",
+    "subtitle": "바이오메디컬 및 행동 과학을 위한 연구 소프트웨어",
+    "description": "파일럿 툴 • 데이터 워크플로우 • 연구 인터페이스",
+    "cta": "협업 시작하기"
+  }
+}

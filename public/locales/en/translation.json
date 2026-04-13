@@ -1,0 +1,14 @@
+{
+  "header": {
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "highlight": {
+    "title": "Rad Science",
+    "subtitle": "Research software for biomedical and behavioral science",
+    "description": "Pilot tools • Data workflows • Research interfaces",
+    "cta": "Start a collaboration"
+  }
+}

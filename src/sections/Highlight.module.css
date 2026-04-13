@@ -1,0 +1,23 @@
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc; /* bg-slate-50 */
+}
+
+.title {
+  font-size: 3.75rem; /* text-6xl */
+  font-weight: 900;    /* font-black */
+  margin-bottom: 1rem; /* mb-4 */
+  color: #0f172a;
+  text-align: center;
+  /* 여기에 나중에 애니메이션 추가하기 좋습니다 */
+}
+
+.description {
+  font-size: 1.25rem;  /* text-xl */
+  color: #475569;      /* text-gray-600 */
+  text-align: center;
+}

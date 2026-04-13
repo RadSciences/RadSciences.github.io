@@ -1,0 +1,150 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0; /* 위치 명시 */
+  width: 100%;
+  background-color: rgba(2, 6, 10, 0.85); /* 약간 더 불투명하게 조정 */
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 80px; /* 고정 높이로 안정성 확보 */
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  max-width: 1280px;
+  width: 100%; /* 부모 너비 채우기 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.logoArea {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0; /* 로고가 찌그러지지 않게 */
+}
+
+.logoArea:hover {
+  opacity: 0.8;
+}
+
+.logoImage {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 184, 0, 0.2));
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem; /* 간격을 조금 더 넓게 확보 */
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  white-space: nowrap; /* 번역 시 줄바꿈 방지 */
+}
+
+.navLink:hover {
+  color: #ffb800;
+}
+
+/* 알약형 스위치 컨테이너 - 위치 고정의 핵심 */
+.pillContainer {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100px; /* 고정 너비를 주어 KO/EN 변경 시 밀림 방지 */
+  justify-content: space-between;
+  margin-left: 1rem;
+}
+
+.pillButton {
+  flex: 1; /* 양쪽 버튼이 정확히 절반씩 차지 */
+  background: none;
+  border: none;
+  color: #9ca3af;
+  padding: 6px 0;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700; /* 조금 더 두껍게 */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillButton.active {
+  background-color: #ffb800;
+  color: #000000;
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.4);
+}
+
+/* ------------------------------------------------
+   반응형 작업 (Responsive)
+------------------------------------------------ */
+
+@media (max-width: 1024px) {
+  .navList {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 64px; /* 모바일 높이 축소 */
+  }
+
+  .nav {
+    padding: 0 1rem;
+  }
+
+  .logoImage {
+    height: 32px;
+  }
+
+  .navList {
+    gap: 1rem;
+  }
+
+  .navLink {
+    font-size: 0.85rem;
+  }
+
+  .pillContainer {
+    width: 84px; /* 모바일 대응 사이즈 */
+    margin-left: 0.5rem;
+  }
+
+  .pillButton {
+    padding: 4px 0;
+    font-size: 0.7rem;
+  }
+}
+
+/* 초소형 기기 대응 */
+@media (max-width: 480px) {
+  /* 메뉴가 너무 많으면 일부 숨기거나 폰트 더 축소 */
+  .navList {
+    gap: 0.8rem;
+  }
+  
+  .navLink {
+    font-size: 0.8rem;
+  }
+}

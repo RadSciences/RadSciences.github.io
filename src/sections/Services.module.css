@@ -1,0 +1,56 @@
+.section {
+  padding: 8rem 0; /* py-32 */
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.container {
+  max-width: 1280px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* px-6 */
+  text-align: center; /* text-center */
+}
+
+.title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  margin-bottom: 4rem; /* mb-16 */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 모바일 1열 */
+  gap: 2rem; /* gap-8 */
+}
+
+/* 태블릿/데스크탑 (md 사이즈 이상) */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* md:grid-cols-4 */
+  }
+}
+
+.card {
+  padding: 2rem; /* p-8 */
+  background-color: #ffffff; /* bg-white */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: box-shadow 0.3s ease; /* transition-shadow */
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+.iconPlaceholder {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  background-color: #dbeafe; /* bg-blue-100 */
+  border-radius: 0.5rem; /* rounded-lg */
+  margin: 0 auto 1.5rem auto; /* mb-6 mx-auto */
+}
+
+.cardTitle {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600;
+  margin: 0;
+}

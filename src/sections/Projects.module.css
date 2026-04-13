@@ -1,0 +1,44 @@
+.section {
+  padding: 8rem 1.5rem; /* py-32 px-6 */
+  max-width: 1280px;    /* max-w-7xl */
+  margin: 0 auto;
+  text-align: center;   /* text-center */
+}
+
+.title {
+  font-size: 2.25rem;   /* text-4xl */
+  font-weight: 700;
+  margin-bottom: 4rem;  /* mb-16 */
+}
+
+.ctaBox {
+  background-color: #2563eb; /* bg-blue-600 */
+  padding: 3rem;             /* p-12 */
+  border-radius: 1.5rem;     /* rounded-3xl */
+  color: #ffffff;            /* text-white */
+}
+
+.description {
+  font-size: 1.5rem;         /* text-2xl */
+  margin-bottom: 1.5rem;     /* mb-6 */
+}
+
+.detailButton {
+  background-color: #ffffff; /* bg-white */
+  color: #2563eb;            /* text-blue-600 */
+  padding: 0.75rem 2rem;     /* py-3 px-8 */
+  border-radius: 9999px;     /* rounded-full */
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.detailButton:hover {
+  background-color: #f3f4f6; /* hover:bg-gray-100 */
+  transform: translateY(-2px); /* 살짝 떠오르는 효과 추가 */
+}
+
+.detailButton:active {
+  transform: translateY(0);
+}

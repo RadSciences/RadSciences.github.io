@@ -1,0 +1,52 @@
+.section {
+  padding-top: 8rem;    /* pt-32 */
+  padding-bottom: 5rem; /* pb-20 */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 56rem;     /* max-w-4xl (내용 집중을 위해 조금 좁게 설정) */
+  margin: 0 auto;
+}
+
+.backButton {
+  margin-bottom: 2rem;  /* mb-8 */
+  color: #2563eb;       /* text-blue-600 */
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.backButton:hover {
+  text-decoration: underline;
+  transform: translateX(-5px); /* 뒤로가기 느낌 강조 */
+}
+
+.title {
+  font-size: 3rem;      /* text-5xl */
+  font-weight: 800;
+  margin-bottom: 2.5rem; /* mb-10 */
+  line-height: 1.2;
+}
+
+.mainImage {
+  aspect-ratio: 16 / 9; /* aspect-video */
+  background-color: #e5e7eb; /* bg-gray-200 */
+  border-radius: 1.5rem;     /* rounded-3xl */
+  margin-bottom: 2.5rem;     /* mb-10 */
+  width: 100%;
+}
+
+.contentBody {
+  font-size: 1.125rem;  /* text-lg */
+  line-height: 1.75;    /* leading-relaxed */
+  color: #374151;       /* text-gray-700 */
+}
+
+.contentBody p {
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,40 @@
+.section {
+  padding: 8rem 0; /* py-32 */
+  background-color: #000000; /* bg-black */
+  color: #ffffff; /* text-white */
+}
+
+.container {
+  max-width: 1280px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* px-6 */
+  text-align: center; /* text-center */
+}
+
+.title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.description {
+  color: #9ca3af; /* text-gray-400 */
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+.contactButton {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff; /* border border-white */
+  padding: 1rem 2.5rem; /* py-4 px-10 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease; /* transition-all */
+}
+
+.contactButton:hover {
+  background-color: #ffffff; /* hover:bg-white */
+  color: #000000; /* hover:text-black */
+}
