@@ -22,25 +22,16 @@ function App() {
       {view === 'main' ? (
         <main>
           
-          <section id="highlight">
-            <Highlight />
-          </section>
+            <Highlight id="highlight"/>
 
-          <section id="about">
-            <About />
-          </section>
+            <About id="about"/>
 
-          <section id="services">
-            <Services />
-          </section>
+            <Services id="services"/>
 
-          <section id="projects">
-            <Projects setView={setView} />
-          </section>
+            <Projects id="projects" setView={setView} />
 
-          <section id="contact">
-            <Contact />
-          </section>
+            <Contact id="contact"/>
+   
         </main>
       ) : (
         /* 프로젝트 상세 페이지 뷰 */

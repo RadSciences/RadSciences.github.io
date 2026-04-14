@@ -2,7 +2,7 @@ import styles from './Projects.module.css';
 
 export default function Projects({ setView }) {
   return (
-    <section id="work" className={styles.section}>
+    <section id="projects" className={styles.section}>
       <h2 className={styles.title}>Our Work</h2>
       
       <div className={styles.ctaBox}>
