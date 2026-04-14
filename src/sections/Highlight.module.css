@@ -30,7 +30,7 @@
   background-repeat: no-repeat;
 
   /* ⭐️ 흐리기 강도 조절 (예: 10px) */
-  filter: blur(3px);
+  filter: blur(1.5px) brightness(0.7);
 
   /* 중요: 흐려진 이미지가 경계면 밖으로 튀어나오는 것을 방지하기 위해 스케일 업 */
 
@@ -86,6 +86,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 /* 배지 슬라이더 모션 */
 .badgeStage {
   margin-top: 3.5rem;
@@ -107,15 +108,16 @@
   transform: translateX(-50%);
   white-space: nowrap;
   font-size: 1.1rem;
-  font-weight: 600; /* 500에서 600으로 올려 획을 더 뚜렷하게 */
+  font-weight: 600;
+  /* 500에서 600으로 올려 획을 더 뚜렷하게 */
   color: #38bdf8;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 0;
   filter: blur(10px);
 
   /* 🪄 1. 글자 자체에 짙은 그림자를 주어 배경과 분리 */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 
-               0 0 10px rgba(15, 23, 42, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(15, 23, 42, 0.5);
 
   /* 🪄 2. 글자 뒤에 아주 옅은 반투명 배경을 깔아 가독성 보호 (선택 사항) */
   /* 너무 진하면 답답하니 0.1~0.2 정도의 투명도를 추천합니다 */
@@ -129,12 +131,14 @@
   transform: translate(-50%, 0);
   filter: blur(0px);
   /* 🪄 활성화되었을 때 미세하게 빛나는 효과 추가 */
-  color: #7dd3fc; /* 조금 더 밝은 하늘색으로 교체 */
+  color: #7dd3fc;
+  /* 조금 더 밝은 하늘색으로 교체 */
 }
 
 .hidden {
   opacity: 0;
-  transform: translate(-50%, 30px); /* 이동 거리를 살짝 줄여 더 촘촘하게 */
+  transform: translate(-50%, 30px);
+  /* 이동 거리를 살짝 줄여 더 촘촘하게 */
   filter: blur(8px);
 }
 
@@ -172,11 +176,11 @@
 
   0%,
   100% {
-    transform: translateY(0) rotate(-10deg);
+    transform: translateY(15px) rotate(-10deg);
   }
 
   50% {
-    transform: translateY(-30px) rotate(10deg);
+    transform: translateY(10px) rotate(10deg);
   }
 }
 
@@ -196,6 +200,7 @@
 
 .visualCard {
   transition: filter 0.5s ease;
+  position: relative;
 }
 
 .dnaWrapper {
@@ -208,23 +213,24 @@
 .graphWrapper {
   width: 700px;
   height: 500px;
-  padding-left: 300px;
-  animation: floatGraph 9s ease-in-out infinite;
+  padding-left: 250px;
+  animation: floatGraph 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   animation-delay: 0.5s;
 }
 
-/* 시각화 요소에 은은한 글로우 효과 */
-.dnaWrapper,
-.graphWrapper {
-  filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.15));
-}
 
 /* 반응형 모바일 대응 */
 @media (max-width: 1100px) {
-  .visualContainer {
-    opacity: 0.25;
-    transform: scale(0.65);
-    gap: 20px;
+  .dnaWrapper {
+    display: none;
+  }
+
+  .graphWrapper {
+    position: absolute;
+    right: -40px;
+    bottom: 40px;
+    opacity: 0.6;
+    z-index: 11;
   }
 
   .copy {

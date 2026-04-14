@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 
-const ROTATION_STRENGTH = 0.0005; 
-const CLUSTER_COLORS = ['#60A5FA', '#818CF8', '#3B82F6', '#93C5FD']; // 다크모드에 맞춰 채도 조절
-const LABELS = ['Cluster α', 'Cluster β', 'Cluster γ', 'Cluster δ'];
+const ROTATION_STRENGTH = 0.0005;
+const CLUSTER_COLORS = ['#FBBF24', '#00F2FF', '#2DD4BF', '#7000FF'];
+// const LABELS = ['Cluster_α', 'Cluster_β', 'Cluster_γ', 'Cluster_δ'];
+const LABELS = ['Phenotype_Alpha', 'Exonic Sequence_δ', 'Kinetic Pathway', 'Structural Variant_γ'];
 
 const makeRng = (seed) => {
   let s = seed;
@@ -14,16 +15,16 @@ const CLUSTERS = CLUSTER_COLORS.length;
 const TOTAL_POINTS = 400;
 
 const clusterConfigs = [
-  { x: 0,   y: 80,  z: 0,   spreadX: 12, spreadY: 40, spreadZ: 12 },
-  { x: 110, y: -70, z: 40,  spreadX: 45, spreadY: 15, spreadZ: 35 },
-  { x: -100,y: 0,   z: -30, spreadX: 10, spreadY: 100,spreadZ: 10 },
-  { x: 20,  y: 20,  z: -110,spreadX: 40, spreadY: 40, spreadZ: 40 }
+  { x: 0, y: 80, z: 0, spreadX: 12, spreadY: 40, spreadZ: 12 },
+  { x: 110, y: -70, z: 40, spreadX: 45, spreadY: 15, spreadZ: 35 },
+  { x: -100, y: 0, z: -30, spreadX: 10, spreadY: 100, spreadZ: 10 },
+  { x: 20, y: 20, z: -110, spreadX: 40, spreadY: 40, spreadZ: 40 }
 ];
 
 const points3d = Array.from({ length: TOTAL_POINTS }, () => {
   const clusterIdx = Math.floor(rng() * CLUSTERS);
   const config = clusterConfigs[clusterIdx];
-  const normRng = () => (rng() + rng() - 1); 
+  const normRng = () => (rng() + rng() - 1);
   return {
     x: config.x + normRng() * config.spreadX,
     y: config.y + normRng() * config.spreadY,
@@ -54,7 +55,7 @@ export default function LargeScatterVisual() {
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
-    
+
     resize();
     window.addEventListener('resize', resize);
 
@@ -62,7 +63,7 @@ export default function LargeScatterVisual() {
       if (!lastTimeRef.current) lastTimeRef.current = currentTime;
       const deltaTime = currentTime - lastTimeRef.current;
       lastTimeRef.current = currentTime;
-      
+
       angleRef.current += deltaTime * ROTATION_STRENGTH;
       const angle = angleRef.current;
 
@@ -75,7 +76,7 @@ export default function LargeScatterVisual() {
       ctx.translate(cx, cy);
 
       const rotY = angle;
-      const rotX = -0.4; 
+      const rotX = -0.4;
       const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
       const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
 
@@ -90,10 +91,10 @@ export default function LargeScatterVisual() {
       };
 
       // 3. 그리드 선 색상 수정 (다크 모드에 맞춰 연하게)
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
-      const gridRange = 160; 
+      ctx.strokeStyle = 'rgba(214, 214, 214, 0.13)';
+      const gridRange = 160;
       const step = 35;
-      for (let y = -gridRange; y <= gridRange; y += step * 2.5) { 
+      for (let y = -gridRange; y <= gridRange; y += step * 2.5) {
         for (let i = -gridRange; i <= gridRange; i += step) {
           let p1 = project(-gridRange, y, i);
           let p2 = project(gridRange, y, i);
@@ -110,12 +111,18 @@ export default function LargeScatterVisual() {
 
       sortedPoints.forEach(p => {
         const d = (p.fZ + 300) / 600;
-        ctx.globalAlpha = 0.2 + d * 0.8;
+        ctx.globalAlpha = 0.3 + d * 0.6;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = p.col;
         ctx.fillStyle = p.col;
         ctx.beginPath();
-        ctx.arc(p.tx, p.ty, 1.8, 0, Math.PI * 2); // 점 크기 시인성 확보
+        ctx.arc(p.tx, p.ty, 1.8, 0, Math.PI * 2);
         ctx.fill();
       });
+
+      // ✨ [수정] 라벨을 그리기 전에 그림자 효과를 완전히 제거합니다.
+      ctx.shadowBlur = 0;
+      ctx.shadowColor = 'transparent';
 
       // 라벨 렌더링 (다크 테마용 화이트 텍스트)
       clusterConfigs.forEach((c, i) => {
