@@ -1,6 +1,7 @@
-import logoWhite from '../assets/logos/logo_white.png';
+import logo from '../assets/logos/logo_black.png';
 import { useLanguage } from '../hooks/useLanguage';
-import React, { useMemo } from 'react'; // useMemo 추가
+import { useMemo } from 'react'; // useMemo 추가
+import { motion } from "framer-motion";
 import styles from './Header.module.css';
 
 export default function Header({ setView }) {
@@ -19,12 +20,21 @@ export default function Header({ setView }) {
   };
 
   return (
-    <header className={styles.header}>
+    <motion.header
+      className={styles.header}
+      initial={{ y: -70, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 60,
+        damping: 10
+      }}
+    >
       <nav className={styles.nav}>
         {/* 로고 영역 */}
         <div className={styles.logoArea} onClick={handleNavClick}>
           <a href="#home">
-            <img src={logoWhite} alt="Red Science Logo" className={styles.logoImage} />
+            <img src={logo} alt="Red Science Logo" className={styles.logoImage} />
           </a>
         </div>
 
@@ -32,9 +42,9 @@ export default function Header({ setView }) {
         <ul className={styles.navList}>
           {navItems.map((item) => (
             <li key={item.name}>
-              <a 
-                href={item.href} 
-                onClick={handleNavClick} 
+              <a
+                href={item.href}
+                onClick={handleNavClick}
                 className={styles.navLink}
               >
                 {item.name}
@@ -59,6 +69,6 @@ export default function Header({ setView }) {
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 }

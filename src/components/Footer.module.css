@@ -1,7 +1,7 @@
 .footer {
-  padding: 3rem 0; /* py-12 */
-  border-top: 1px solid #f3f4f6; /* border-gray-100 */
-  background-color: #ffffff; /* bg-white */
+  padding: 1.5rem 0; /* py-12 */
+  border-top: 1px solid #01359c; /* border-gray-100 */
+  background-color: #2a0101; /* bg-white */
 }
 
 .container {

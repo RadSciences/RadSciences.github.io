@@ -1,23 +1,130 @@
+/* 1. 전체 레이아웃: 딥 다크 테마 */
 .section {
-  height: 100vh;
+  width: 100%;
+  min-height: 850px; /* 고정값으로 요소 간격 유지 */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8fafc; /* bg-slate-50 */
+  background: #0f172a; /* 짙은 네이비 톤의 다크 배경 */
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+/* 2. 상단 텍스트 섹션 */
+.headerSection {
+  flex: 0 0 auto;
+  padding: 80px 20px 40px; 
+  text-align: center;
 }
 
 .title {
-  font-size: 3.75rem; /* text-6xl */
-  font-weight: 900;    /* font-black */
-  margin-bottom: 1rem; /* mb-4 */
-  color: #0f172a;
-  text-align: center;
-  /* 여기에 나중에 애니메이션 추가하기 좋습니다 */
+  display: block;
+  font-size: 13px;
+  color: #818cf8; /* 좀 더 밝은 보라/블루로 대비 증폭 */
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
-.description {
-  font-size: 1.25rem;  /* text-xl */
-  color: #475569;      /* text-gray-600 */
-  text-align: center;
+.copy {
+  font-size: 20px;
+  color: #f1f5f9; /* 밝은 회색 텍스트로 눈 보호 */
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  word-break: keep-all;
+}
+
+/* 3. 하단 시각화 배치 영역: 중앙 집중형 */
+.visualContainer {
+  flex: 1;
+  display: flex;
+  align-items: flex-start; /* 텍스트 바로 아래 고정된 위치에서 시작 */
+  justify-content: center;
+  padding: 10px 40px 80px;
+  gap: 20px; /* 요소 사이 간격을 넉넉히 */
+}
+
+.visualCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 카드 자체에 은은한 외곽선을 주어 구분감 부여 (선택사항) */
+  /* background: rgba(255, 255, 255, 0.03);  */
+  /* border-radius: 12px; */
+}
+
+/* 4. DNA 및 그래프: 절대값(px) 고정 및 오버랩 방지 */
+.dnaWrapper {
+  width: 320px;
+  height: 420px;
+  flex-shrink: 0;
+}
+
+.graphWrapper {
+  width: 620px;
+  height: 420px;
+  flex-shrink: 0;
+}
+
+/* 시각화 객체 내부 강제 투명화 */
+.visualCard > div,
+.visualCard canvas {
+  background: transparent !important;
+}
+/* 5. 반응형: 모바일에서도 가로 배치(Row) 유지 */
+@media (max-width: 1100px) {
+  .root {
+    /* 모바일에서 높이가 부족할 수 있으므로 최소 높이 해제 및 스크롤 허용 */
+    height: auto;
+    min-height: 100vh; 
+    overflow-y: auto;
+  }
+  
+  .headerSection {
+    padding: 170px 15px 30px; /* 상단 여백 소폭 축소 */
+  }
+
+  .copy {
+    font-size: 18px; /* 문구 크기 축소 */
+    max-width: 90%;
+  }
+
+  .visualContainer {
+    /* 핵심: flex-direction을 column으로 바꾸지 않고 row(기본값) 유지 */
+    flex-direction: row; 
+    align-items: center;
+    overflow-x: auto; /* 화면보다 커지면 가로 스크롤 허용 (보험) */
+  }
+
+  /* 모바일용 DNA와 그래프 크기 재정의 */
+  .dnaWrapper {
+    width: 100px;  /* 모바일에서 DNA는 얇게 */
+    height: 300px;
+    flex-shrink: 0;
+  }
+
+  .graphWrapper {
+    width: calc(100% - 150px); /* 남은 공간 활용 */
+    min-width: 180px;         /* 너무 작아지지 않게 */
+    height: 300px;
+    flex-shrink: 1;           /* 공간 부족 시 줄어들 수 있게 */
+  }
+}
+
+/* 아주 작은 모바일 (480px 이하) 대응 */
+@media (max-width: 480px) {
+  .visualContainer {
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .dnaWrapper {
+    width: 80px; /* 더 작게 */
+  }
+
+  .copy {
+    font-size: 16px;
+  }
 }

@@ -1,25 +1,36 @@
 .header {
   position: fixed;
   top: 0;
-  left: 0; /* 위치 명시 */
+  left: 0;
   width: 100%;
-  background-color: rgba(2, 6, 10, 0.85); /* 약간 더 불투명하게 조정 */
-  backdrop-filter: blur(12px);
+  height: 64px;
+  /* 본문 배경색인 #0f172a와 조화로운 어두운 반투명 배경 */
+  background-color: rgba(0, 0, 0, 0.974); 
+  backdrop-filter: blur(20px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 80px; /* 고정 높이로 안정성 확보 */
+  /* 경계선도 어둡게 변경 */
+  /* border-bottom: 1px solid #01359c; */
+  box-shadow: 0 2px 5px #01359cd1;
+  padding-bottom: 1px;
   display: flex;
   align-items: center;
+  transition: height 0.25s ease, background-color 0.25s ease; 
+}
+
+/* 스크롤 시 완전한 다크 룩 */
+.header.scrolled {
+  height: 56px;
+  background-color: rgba(2, 6, 10, 0.95);
 }
 
 .nav {
   max-width: 1280px;
-  width: 100%; /* 부모 너비 채우기 */
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
 }
 
 .logoArea {
@@ -27,66 +38,69 @@
   display: flex;
   align-items: center;
   transition: opacity 0.3s ease;
-  flex-shrink: 0; /* 로고가 찌그러지지 않게 */
-}
-
-.logoArea:hover {
-  opacity: 0.8;
+  flex-shrink: 0;
+  overflow: hidden;/* --- 추가 및 수정된 부분 --- */
+  height: 64px;       /* 헤더 높이와 동일하게 설정 */
+  max-height: 64px;   /* 높이 고정 */   /* 영역을 벗어나는 이미지 절단 */
+  position: relative;
 }
 
 .logoImage {
-  height: 40px;
-  width: auto;
+  width: 80px;
+  height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(255, 184, 0, 0.2));
+  filter: drop-shadow(0 0 12px rgba(255, 184, 0, 0.2));
 }
 
 .navList {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 2.5rem; /* 간격을 조금 더 넓게 확보 */
+  gap: 2.5rem;
 }
 
 .navLink {
-  color: #ffffff;
+  /* 글씨색을 밝은 회색으로 변경 */
+  color: #e2e8f0; 
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.2s;
-  white-space: nowrap; /* 번역 시 줄바꿈 방지 */
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .navLink:hover {
+  /* 강조색 유지 (금색/노란색) */
   color: #ffb800;
+  transform: translateY(-1px);
 }
 
-/* 알약형 스위치 컨테이너 - 위치 고정의 핵심 */
+/* pill switch (다크 모드 최적화) */
 .pillContainer {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 3px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100px; /* 고정 너비를 주어 KO/EN 변경 시 밀림 방지 */
+  width: 92px;
   justify-content: space-between;
   margin-left: 1rem;
 }
 
 .pillButton {
-  flex: 1; /* 양쪽 버튼이 정확히 절반씩 차지 */
+  flex: 1;
   background: none;
   border: none;
-  color: #9ca3af;
-  padding: 6px 0;
+  color: #94a3b8; /* 차분한 블루그레이 */
+  padding: 5px 0;
   border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 700; /* 조금 더 두껍게 */
+  font-size: 0.72rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pillButton.active {
@@ -95,9 +109,9 @@
   box-shadow: 0 0 12px rgba(255, 184, 0, 0.4);
 }
 
-/* ------------------------------------------------
-   반응형 작업 (Responsive)
------------------------------------------------- */
+/* -----------------------------
+   Responsive
+----------------------------- */
 
 @media (max-width: 1024px) {
   .navList {
@@ -107,7 +121,7 @@
 
 @media (max-width: 768px) {
   .header {
-    height: 64px; /* 모바일 높이 축소 */
+    height: 56px;
   }
 
   .nav {
@@ -115,11 +129,11 @@
   }
 
   .logoImage {
-    height: 32px;
+    height: 28px;
   }
 
   .navList {
-    gap: 1rem;
+    gap: 0.9rem;
   }
 
   .navLink {
@@ -127,24 +141,42 @@
   }
 
   .pillContainer {
-    width: 84px; /* 모바일 대응 사이즈 */
+    width: 80px;
     margin-left: 0.5rem;
   }
 
   .pillButton {
     padding: 4px 0;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 }
 
-/* 초소형 기기 대응 */
 @media (max-width: 480px) {
-  /* 메뉴가 너무 많으면 일부 숨기거나 폰트 더 축소 */
-  .navList {
-    gap: 0.8rem;
+  .header {
+    height: 52px;
   }
-  
+
+  .nav {
+    padding: 0 0.8rem;
+  }
+
+  .logoImage {
+    height: 24px;
+  }
+
+  .navList {
+    gap: 0.6rem;
+  }
+
   .navLink {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+  }
+
+  .pillContainer {
+    width: 72px;
+  }
+
+  .pillButton {
+    font-size: 0.65rem;
   }
 }

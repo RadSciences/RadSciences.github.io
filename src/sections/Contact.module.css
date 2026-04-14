@@ -1,40 +1,129 @@
 .section {
-  padding: 8rem 0; /* py-32 */
-  background-color: #000000; /* bg-black */
-  color: #ffffff; /* text-white */
+  background-color: #0f172a;
+  padding: 140px 20px;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .container {
-  max-width: 1280px; /* max-w-7xl */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem; /* px-6 */
-  text-align: center; /* text-center */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+.tag {
+  color: #ffb800;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
 .title {
-  font-size: 2.25rem; /* text-4xl */
+  font-size: 48px;
   font-weight: 700;
-  margin-bottom: 2rem; /* mb-8 */
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.highlight {
+  color: rgba(255, 255, 255, 0.3); /* 살짝 투명한 텍스트로 대비 */
+  background: linear-gradient(90deg, #fff, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .description {
-  color: #9ca3af; /* text-gray-400 */
-  margin-bottom: 3rem; /* mb-12 */
+  font-size: 17px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 440px;
+}
+
+/* 통계 지표 스타일 */
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  border-left: 2px solid #ffb800;
+  padding-left: 20px;
+}
+
+.statNum {
+  display: block;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* 연락처 상세 정보 */
+.contactDetails {
+  display: flex;
+  gap: 30px;
+}
+
+.detailLink small {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.detailLink p {
+  font-size: 15px;
+  color: #e2e8f0;
+}
+
+/* 폼 디자인은 이전 답변의 스타일을 기반으로 하되 더 슬림하게 유지 */
+
+.inputGroup input, 
+.inputGroup textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 15px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputGroup input:focus, 
+.inputGroup textarea:focus {
+  border-color: #ffb800; /* 헤더와 맞춘 포인트 컬러 */
 }
 
 .contactButton {
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid #ffffff; /* border border-white */
-  padding: 1rem 2.5rem; /* py-4 px-10 */
-  border-radius: 9999px; /* rounded-full */
-  font-size: 1rem;
-  font-weight: 500;
+  width: 100%;
+  background-color: #ffb800;
+  color: #000;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease; /* transition-all */
+  border: none;
+  transition: transform 0.2s;
 }
 
 .contactButton:hover {
-  background-color: #ffffff; /* hover:bg-white */
-  color: #000000; /* hover:text-black */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 184, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* 모바일은 세로로 */
+    text-align: center;
+    gap: 40px;
+  }
 }
