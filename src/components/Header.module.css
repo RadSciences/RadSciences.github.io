@@ -5,7 +5,7 @@
   width: 100%;
   height: 64px;
   /* 본문 배경색인 #0f172a와 조화로운 어두운 반투명 배경 */
-  background-color: rgba(0, 0, 0, 0.974); 
+  background-color: #111D29;
   backdrop-filter: blur(20px);
   z-index: 1000;
   /* 경계선도 어둡게 변경 */
@@ -40,14 +40,14 @@
   transition: opacity 0.3s ease;
   flex-shrink: 0;
   overflow: hidden;/* --- 추가 및 수정된 부분 --- */
-  height: 64px;       /* 헤더 높이와 동일하게 설정 */
-  max-height: 64px;   /* 높이 고정 */   /* 영역을 벗어나는 이미지 절단 */
+  height: 60px;       /* 헤더 높이와 동일하게 설정 */
+  max-height: 60px;   /* 높이 고정 */   /* 영역을 벗어나는 이미지 절단 */
   position: relative;
 }
 
 .logoImage {
-  width: 80px;
-  height: auto;
+  height: 60px;       /* 헤더 높이와 동일하게 설정 */
+  max-height: 60px;
   object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(255, 184, 0, 0.2));
 }

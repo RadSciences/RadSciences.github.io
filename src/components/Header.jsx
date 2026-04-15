@@ -1,4 +1,5 @@
-import logo from '../assets/logos/logo_black.png';
+import logo from '../assets/logos/logo_only.png';
+import logo_text from '../assets/logos/logo_text1111.png';
 import { useLanguage } from '../hooks/useLanguage';
 import { useMemo } from 'react'; // useMemo 추가
 import { motion } from "framer-motion";
@@ -32,9 +33,18 @@ export default function Header({ setView }) {
     >
       <nav className={styles.nav}>
         {/* 로고 영역 */}
-        <div className={styles.logoArea} onClick={handleNavClick}>
+        <div
+          className={styles.logoArea}
+          onClick={() => {
+            handleNavClick();
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          }}
+        >
           <a href="#home">
-            <img src={logo} alt="Red Science Logo" className={styles.logoImage} />
+            <img src={logo_text} alt="Red Science Logo" className={styles.logoImage} />
           </a>
         </div>
 
