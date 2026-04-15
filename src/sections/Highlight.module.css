@@ -4,14 +4,13 @@
   min-height: 850px;
   display: flex;
   flex-direction: column;
-  /* 기존 배경 관련 속성은 모두 지웁니다. */
-  /* background-image, size, position 등 삭제 */
-
+  content-visibility: auto;
+  will-change: transform;
+  backface-visibility: hidden;
   font-family: 'Inter', sans-serif;
   overflow: hidden;
   position: relative;
   background-color: #0f172a;
-  /* 기본 배경색만 남김 */
 }
 
 /* 🪄 가상 요소를 배경으로 만듭니다. */
