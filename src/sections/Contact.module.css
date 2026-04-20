@@ -1,12 +1,14 @@
 .section {
   background-color: #0f172a;
-  padding: 140px 20px;
+  min-height: 100vh;
+  padding: 150px 20px 80px 20px;
+  width: 100%;
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -29,7 +31,6 @@
 }
 
 .highlight {
-  color: rgba(255, 255, 255, 0.3); /* 살짝 투명한 텍스트로 대비 */
   background: linear-gradient(90deg, #fff, #818cf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -43,28 +44,58 @@
   max-width: 440px;
 }
 
-/* 통계 지표 스타일 */
 .stats {
   display: flex;
-  gap: 40px;
+  gap: 60px; /* 요소 간 간격을 조금 더 넓혀 가독성 확보 */
   margin-bottom: 60px;
-  border-left: 2px solid #ffb800;
-  padding-left: 20px;
+  /* 기존 노란색 라인 대신 테크니컬한 사이언 컬러와 그라데이션 적용 */
+  border-left: 3px solid #00f2ff; 
+  padding-left: 25px;
+  position: relative;
+}
+
+/* 왼쪽 라인에 은은한 글로우 효과 추가 */
+.stats::before {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #00f2ff;
+  filter: blur(4px);
+  opacity: 0.5;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .statNum {
   display: block;
-  font-size: 28px;
+  font-size: 32px; /* 가독성을 위해 크기 소폭 상향 */
   font-weight: 800;
   color: #fff;
+  font-family: 'Inter', sans-serif; /* 숫자가 명확히 보이는 폰트 권장 */
+  
+  /* 숫자 애니메이션 최적화 */
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+  
+  /* 생동감을 위한 미세한 텍스트 글로우 */
+  text-shadow: 0 0 12px rgba(0, 242, 255, 0.4);
 }
 
 .statLabel {
-  font-size: 13px;
-  color: #64748b;
+  font-size: 12px;
+  color: #94a3b8; /* 가독성을 위해 기존보다 약간 밝게 조정 */
+  text-transform: uppercase; /* 소문자보다 전문적인 느낌 부여 */
+  letter-spacing: 1.5px; /* 자간을 넓혀 데이터 라벨 느낌 강조 */
+  font-weight: 500;
 }
 
-/* 연락처 상세 정보 */
 .contactDetails {
   display: flex;
   gap: 30px;
@@ -83,9 +114,11 @@
   color: #e2e8f0;
 }
 
-/* 폼 디자인은 이전 답변의 스타일을 기반으로 하되 더 슬림하게 유지 */
 
-.inputGroup input, 
+.form{
+  padding-top: 100px;
+}
+.inputGroup input,
 .inputGroup textarea {
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
@@ -98,9 +131,9 @@
   transition: border-color 0.3s;
 }
 
-.inputGroup input:focus, 
+.inputGroup input:focus,
 .inputGroup textarea:focus {
-  border-color: #ffb800; /* 헤더와 맞춘 포인트 컬러 */
+  border-color: #ffb800;
 }
 
 .contactButton {
@@ -121,9 +154,23 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    background-color: #0f172a;
+    min-height: 100vh;
+    padding: 80px 20px;
+    width: 100%;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .stats, .contactDetails {
+    display: none;
+  }
+
   .container {
-    grid-template-columns: 1fr; /* 모바일은 세로로 */
+    grid-template-columns: 1fr;
     text-align: center;
     gap: 40px;
   }
+  
 }

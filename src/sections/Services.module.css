@@ -1,56 +1,101 @@
 .section {
-  padding: 8rem 0; /* py-32 */
-  background-color: #f9fafb; /* bg-gray-50 */
+  padding: 110px 20px 80px 20px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* 세로 중앙 정렬로 안정감 부여 */
+  overflow: hidden;
 }
 
 .container {
-  max-width: 1280px; /* max-w-7xl */
+  width: 100%;
+  /* 고정폭 대신 100% */
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 1.5rem; /* px-6 */
-  text-align: center; /* text-center */
+  padding: 0 20px;
+  /* 모바일 여백 확보 */
 }
 
 .title {
-  font-size: 2.25rem; /* text-4xl */
-  font-weight: 700;
-  margin-bottom: 4rem; /* mb-16 */
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #000;
+}
+
+/* 슬라이드를 감싸는 영역 */
+.sliderWrapper {
+  cursor: grab;
+}
+
+.sliderWrapper:active {
+  cursor: grabbing;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr; /* 모바일 1열 */
-  gap: 2rem; /* gap-8 */
+  display: flex;
+  /* grid 대신 flex 사용으로 가로 나열 */
+  gap: 30px;
+  padding: 20px 0;
 }
 
-/* 태블릿/데스크탑 (md 사이즈 이상) */
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr); /* md:grid-cols-4 */
+.featureItem {
+  flex: 0 0 85%;
+  /* 화면의 85% 정도만 차지하게 하여 옆 카드가 살짝 보이게 함 */
+  max-width: 380px;
+  /* 최대 크기는 제한 */
+  background-color: #fff;
+  padding: 40px 30px;
+  /* 모바일에서는 패딩을 조금 줄임 */
+  border: 1px solid #eee;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.03);
+  /* 아주 연한 그림자 */
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+}
+
+.featureItem:hover {
+  border-color: #00f2ff;
+}
+
+.featureNumber {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #00f2ff;
+}
+
+.featureTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.featureDesc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #666;
+  word-break: keep-all;
+}
+
+.scrollHint {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: #bbb;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 반응형: 모바일에서는 카드가 조금 더 작게 */
+@media (max-width: 768px) {
+  .featureItem {
+    flex: 0 0 380px; /* 태블릿 이상부터는 기존 사이즈 고정 */
   }
-}
-
-.card {
-  padding: 2rem; /* p-8 */
-  background-color: #ffffff; /* bg-white */
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
-  transition: box-shadow 0.3s ease; /* transition-shadow */
-}
-
-.card:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-}
-
-.iconPlaceholder {
-  width: 3rem; /* w-12 */
-  height: 3rem; /* h-12 */
-  background-color: #dbeafe; /* bg-blue-100 */
-  border-radius: 0.5rem; /* rounded-lg */
-  margin: 0 auto 1.5rem auto; /* mb-6 mx-auto */
-}
-
-.cardTitle {
-  font-size: 1.25rem; /* text-xl */
-  font-weight: 600;
-  margin: 0;
 }

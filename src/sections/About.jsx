@@ -1,20 +1,46 @@
+import { useLanguage } from '../hooks/useLanguage';
 import styles from './About.module.css';
 
 export default function About() {
+  const { t } = useLanguage();
+
+  // returnObjects: true 옵션이 i18n 설정에 따라 작동하지 않을 수 있으니 확인 필요
+  const stats = t('company.stats', { returnObjects: true }) || [];
+
+
   return (
     <section id="about" className={styles.section}>
-      <h2 className={styles.title}>About Us</h2>
-      
-      <div className={styles.contentGrid}>
-        {/* 이미지 들어갈 자리 */}
-        <div className={styles.imagePlaceholder}></div>
-        
-        {/* 텍스트 내용 */}
-        <div className={styles.textContent}>
-          <p className={styles.description}>
-            회사 설명설명입니다. 회사 설명! 
-            우리의 비전과 목표 설명설명
-          </p>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <span className={styles.subtitle}>About us</span>
+          <h2 className={styles.title}>{t('company.title')}</h2>
+        </div>
+
+        <div className={styles.mainGrid}>
+          <div className={styles.visualSide}>
+            <div className={styles.imagePlaceholder}>
+              <div className={styles.glitchEffect}>
+                <span className={styles.logoText}>RAD SCIENCE</span>
+              </div>
+            </div>
+
+            <div className={styles.statsContainer}>
+              {Array.isArray(stats) && stats.map((stat, i) => (
+                <div className={styles.statItem} key={i}>
+                  <span className={styles.statValue}>{stat.value}</span>
+                  <span className={styles.statLabel}>{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.textSide}>
+            <div className={styles.introduction}>
+              <h3 className={styles.slogan}>{t('company.slogan')}</h3>
+              <p className={styles.description}>{t('company.description')}</p>
+              <p className={styles.detail}>{t('company.detail')}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

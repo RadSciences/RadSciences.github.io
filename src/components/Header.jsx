@@ -43,9 +43,7 @@ export default function Header({ setView }) {
             });
           }}
         >
-          <a href="#home">
-            <img src={logo_text} alt="Red Science Logo" className={styles.logoImage} />
-          </a>
+          <img src={logo_text} alt="Red Science Logo" className={styles.logoImage} />
         </div>
 
         {/* 메뉴 영역 */}

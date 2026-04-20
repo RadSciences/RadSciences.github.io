@@ -6,9 +6,58 @@
     "contact": "Contact"
   },
   "highlight": {
+    "title": "Visualizing Hidden Patterns\nIn Your Data."
+  },
+  "company": {
     "title": "Rad Science",
-    "subtitle": "Research software for biomedical and behavioral science",
-    "description": "Pilot tools • Data workflows • Research interfaces",
-    "cta": "Start a collaboration"
+    "slogan": "Innovative & Reliable Partner in\nMedical Research",
+    "description": "Rad Science is a specialized AI data analysis and software solution provider\nestablished to bridge the data gap in medical and behavioral research.",
+    "detail": "Based on our experience collaborating with world-class institutions like the University of Iowa and University of Wisconsin,\nwe empower researchers to focus on their core scientific achievements by handling complex data challenges.",
+    "stats": [
+      {
+        "label": "Experience",
+        "value": "7+ Years"
+      },
+      {
+        "label": "Global Partners",
+        "value": "UIHC & UW"
+      },
+      {
+        "label": "Core Tech",
+        "value": "TDA & DL"
+      }
+    ],
+    "features": [
+      {
+        "title": "AI Research",
+        "desc": "Building deep learning-based end-to-end data pipelines"
+      },
+      {
+        "title": "Global Network",
+        "desc": "Close research collaboration with major U.S. hospitals"
+      },
+      {
+        "title": "Technical Support",
+        "desc": "Customized SW solutions optimized for research"
+      },
+      {
+        "title": "AI Research",
+        "desc": "Building deep learning-based end-to-end data pipelines"
+      },
+      {
+        "title": "Global Network",
+        "desc": "Close research collaboration with major U.S. hospitals"
+      },
+      {
+        "title": "Technical Support",
+        "desc": "Customized SW solutions optimized for research"
+      }
+    ]
+  },
+  "contact": {
+    "description": "Solving complex biological challenges with precision data science.\nFrom analysis partnerships to technology integration,\nexpand your project with us.",
+    "inputName": "Your Name",
+    "inputEmail": "Email Address",
+    "inputDescription": "Please feel free to write your inquiry."
   }
 }

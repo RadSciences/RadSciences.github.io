@@ -1,33 +1,35 @@
 .section {
-  padding: 8rem 1.5rem; /* py-32 px-6 */
-  max-width: 1280px;    /* max-w-7xl */
+  padding: 150px 20px 80px;
+  min-height: 100vh;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  text-align: center;   /* text-center */
+  text-align: center;
 }
 
 .title {
-  font-size: 2.25rem;   /* text-4xl */
+  font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 4rem;  /* mb-16 */
+  margin-bottom: 4rem;
 }
 
 .ctaBox {
-  background-color: #2563eb; /* bg-blue-600 */
-  padding: 3rem;             /* p-12 */
-  border-radius: 1.5rem;     /* rounded-3xl */
-  color: #ffffff;            /* text-white */
+  background-color: #2563eb;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  color: #fff;
 }
 
 .description {
-  font-size: 1.5rem;         /* text-2xl */
-  margin-bottom: 1.5rem;     /* mb-6 */
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .detailButton {
-  background-color: #ffffff; /* bg-white */
-  color: #2563eb;            /* text-blue-600 */
-  padding: 0.75rem 2rem;     /* py-3 px-8 */
-  border-radius: 9999px;     /* rounded-full */
+  background-color: #fff;
+  color: #2563eb;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
   font-weight: 700;
   border: none;
   cursor: pointer;
@@ -35,8 +37,8 @@
 }
 
 .detailButton:hover {
-  background-color: #f3f4f6; /* hover:bg-gray-100 */
-  transform: translateY(-2px); /* 살짝 떠오르는 효과 추가 */
+  background-color: #f3f4f6;
+  transform: translateY(-2px);
 }
 
 .detailButton:active {
