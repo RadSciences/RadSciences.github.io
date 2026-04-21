@@ -1,23 +1,44 @@
 import logo from '../assets/logos/logo_only.png';
-import logo_text from '../assets/logos/logo_text1111.png';
 import { useLanguage } from '../hooks/useLanguage';
-import { useMemo } from 'react'; // useMemo 추가
-import { motion } from "framer-motion";
+import { useMemo } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styles from './Header.module.css';
 
-export default function Header({ setView }) {
+export default function Header() {
   const { t, currentLang, setLanguage } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // 리렌더링 시 배열 재생성 방지 (언어 변경 시에만 재계산)
   const navItems = useMemo(() => [
-    { name: t('header.about'), href: '#about' },
+    { name: t('header.about'),    href: '#about' },
     { name: t('header.services'), href: '#services' },
     { name: t('header.projects'), href: '#projects' },
-    { name: t('header.contact'), href: '#contact' },
+    { name: t('header.contact'),  href: '#contact' },
   ], [t]);
 
-  const handleNavClick = () => {
-    setView('main');
+  // 메인 페이지면 anchor 스크롤, 상세 페이지면 메인으로 이동 후 스크롤
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      // 이동 후 DOM 렌더 기다렸다가 스크롤
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        el?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
   };
 
   return (
@@ -25,25 +46,13 @@ export default function Header({ setView }) {
       className={styles.header}
       initial={{ y: -70, opacity: 1 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{
-        type: "spring",
-        stiffness: 60,
-        damping: 10
-      }}
+      transition={{ type: 'spring', stiffness: 60, damping: 10 }}
     >
       <nav className={styles.nav}>
         {/* 로고 영역 */}
-        <div
-          className={styles.logoArea}
-          onClick={() => {
-            handleNavClick();
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-            });
-          }}
-        >
-          <img src={logo_text} alt="Red Science Logo" className={styles.logoImage} />
+        <div className={styles.logoArea} onClick={handleLogoClick}>
+          <img src={logo} alt="Red Science Logo" className={styles.logoImage} />
+          <span className={styles.name}>RAD SCIENCE</span>
         </div>
 
         {/* 메뉴 영역 */}
@@ -52,7 +61,7 @@ export default function Header({ setView }) {
             <li key={item.name}>
               <a
                 href={item.href}
-                onClick={handleNavClick}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className={styles.navLink}
               >
                 {item.name}
@@ -60,7 +69,7 @@ export default function Header({ setView }) {
             </li>
           ))}
 
-          {/* 알약형 언어 스위치 */}
+          {/* 언어 스위치 */}
           <li className={styles.langSwitchWrapper}>
             <div className={styles.pillContainer}>
               {['ko', 'en'].map((lang) => (

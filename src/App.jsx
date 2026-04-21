@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './sections/Hero';
 import About from './sections/About';
@@ -8,25 +9,44 @@ import Contact from './sections/Contact';
 import ProjectDetail from './sections/ProjectDetail';
 import Footer from './components/Footer';
 
-function App() {
-  const [view, setView] = useState('main');
+function ScrollToTop() {
+  const location = useLocation();
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      el?.scrollIntoView();
+    } else {
+      window.scrollTo(0, 0);
+    }
+
+  }, [pathname, location.state]);
+  return null;
+}
+
+function MainPage() {
+
 
   return (
+    <main>
+      <Hero />
+      <About id="about" />
+      <Services id="services" />
+      <Projects id="projects" />
+      <Contact id="contact" />
+    </main>
+  );
+}
+
+function App() {
+  return (
     <div className="app-container">
-      <Header setView={setView} />
-
-      {view === 'main' ? (
-        <main>
-          <Hero />
-          <About id="about" />
-          <Services id="services" />
-          <Projects id="projects" setView={setView} />
-          <Contact id="contact" />
-        </main>
-      ) : (
-        <ProjectDetail setView={setView} />
-      )}
-
+      <ScrollToTop />
+      <Header />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
+      </Routes>
       <Footer />
     </div>
   );

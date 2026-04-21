@@ -72,11 +72,13 @@ export default function Contact() {
     }
   };
 
+
+
   return (
     <section id="contact" className={styles.section} ref={ref}>
       <div className={styles.container}>
         <div className={styles.infoArea}>
-          <div className={styles.tag}>CONTACT US</div>
+          <div className={styles.subtitle}>CONTACT US</div>
           <h2 className={styles.title}>
             Let's decode <br />
             <span className={styles.highlight}>your data together.</span>
@@ -85,12 +87,12 @@ export default function Contact() {
 
           <div className={styles.stats}>
             <div className={styles.statItem}>
-              <span className={styles.statNum}>{accuracy}%</span>
+              <span className={styles.statNum}>{accuracy} %</span>
               <span className={styles.statLabel}>Accuracy</span>
             </div>
 
             <div className={styles.statItem}>
-              <span className={styles.statNum}>{response}h</span>
+              <span className={styles.statNum}>{response} h</span>
               <span className={styles.statLabel}>Response</span>
             </div>
           </div>
@@ -98,7 +100,9 @@ export default function Contact() {
           <div className={styles.contactDetails}>
             <div className={styles.detailLink}>
               <small>Email Inquiry</small>
-              <p>contact@radscience.kr</p>
+              <p>              
+                contact@radscience.kr
+              </p>
             </div>
             <div className={styles.detailLink}>
               <small>Office</small>

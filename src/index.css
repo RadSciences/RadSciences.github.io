@@ -8,20 +8,16 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
   height: 100%;
-  background-color: #0a0a0a;
+  background: radial-gradient(circle at center, #0e2750 0%, #000000 100%);
 }
 
 body {
-  background-color: var(--rs-black);
-  color: var(--rs-white);
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-  background-color: #0a0a0a;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 ul, ol {
@@ -30,8 +26,4 @@ ul, ol {
 
 a {
   text-decoration: none;
-  color: inherit;
-}
-main {
-  flex: 1; /* 남는 모든 공간을 차지하여 푸터를 바닥으로 밀어냄 */
 }

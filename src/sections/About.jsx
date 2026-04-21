@@ -18,10 +18,9 @@ export default function About() {
 
         <div className={styles.mainGrid}>
           <div className={styles.visualSide}>
-            <div className={styles.imagePlaceholder}>
-              <div className={styles.glitchEffect}>
-                <span className={styles.logoText}>RAD SCIENCE</span>
-              </div>
+            <div className={styles.imgContainer}>
+              {/* <img className={styles.img} src='./aboutSimple.png'></img> */}
+              <img className={styles.img} src='./aboutReal.png'></img>
             </div>
 
             <div className={styles.statsContainer}>

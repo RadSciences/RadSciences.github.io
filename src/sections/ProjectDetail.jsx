@@ -1,31 +1,88 @@
+import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../hooks/useLanguage';
 import styles from './ProjectDetail.module.css';
 
-export default function ProjectDetail({ setView }) {
+export default function ProjectDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const { t, currentLang } = useLanguage();
-  const isKo = currentLang === 'ko';
+
+  const items = t('projects.items', { returnObjects: true });
+  const project = Array.isArray(items) ? items.find((p) => p.id === id) : null;
+
+  const backLabel = currentLang === 'ko' ? '← 프로젝트 목록으로' : '← Back to Projects';
+  const notFound = currentLang === 'ko' ? '프로젝트를 찾을 수 없습니다.' : 'Project not found.';
+  const visitLabel = currentLang === 'ko' ? '사이트 방문' : 'Visit Site';
+
+  if (!project) {
+    return (
+      <article className={styles.section}>
+        <button onClick={() => navigate('/', { state: { scrollTo: 'projects' } })} className={styles.backButton}>
+          {backLabel}
+        </button>
+        <p className={styles.notFound}>{notFound}</p>
+      </article>
+    );
+  }
+
+  const hasLink = project.link && project.link !== '__Link__';
 
   return (
     <article className={styles.section}>
-      <button onClick={() => setView('main')} className={styles.backButton}>
-        ← 프로젝트 목록으로 돌아가기
+      <button onClick={() => navigate('/', { state: { scrollTo: 'projects' } })} className={styles.backButton}>
+        {backLabel}
       </button>
 
-      <h1 className={styles.title}>Project Details</h1>
+      <span className={`${styles.badge} ${styles[project.status]}`}>
+        {project.status === 'live' ? 'Live' : 'In Progress'}
+      </span>
 
-      <div className={styles.mainImage} />
+      <h1 className={styles.title}>{project.title}</h1>
+
+      {project.affiliation && (
+        <p className={styles.affiliation}>{project.affiliation}</p>
+      )}
+
+      {project.context && (
+        <p className={styles.context}>{project.context}</p>
+      )}
+
+      {project.demo ? (
+        <video
+          className={styles.mainVideo}
+          src={project.demo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+        />
+      ) : (
+        <div className={styles.mainImage} >
+          {currentLang=="ko"? <span>준비중입니다.</span>:<span>In preparation</span>}
+        </div>
+      )}
 
       <div className={styles.contentBody}>
-        <p>
-          이 프로젝트는 사용자의 편의성을 최우선으로 고려하여 설계되었습니다.
-          최신 웹 기술을 활용하여 빠르고 안정적인 서비스를 구현했으며,
-          데이터 분석을 통한 비즈니스 인사이트를 시각적으로 제공하는 데 집중했습니다.
-        </p>
-        <p>
-          주요 기술 스택으로는 React와 Spring Boot를 사용하였으며,
-          효율적인 데이터 관리를 위해 MySQL과 연동하여 실시간 대시보드를 구축했습니다.
-        </p>
+        <p>{project.description}</p>
       </div>
+
+      <div className={styles.tags}>
+        {project.tags.map((tag) => (
+          <span key={tag} className={styles.tag}>{tag}</span>
+        ))}
+      </div>
+
+      {hasLink && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+        >
+          {project.linkLabel || visitLabel} →
+        </a>
+      )}
     </article>
   );
 }

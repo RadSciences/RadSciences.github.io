@@ -114,15 +114,33 @@
 }
 
 @keyframes floatDna {
-  0%   { transform: translate(80px, -50px) rotate(-15deg); }
-  33%  { transform: translate(40px, -10px) rotate(10deg); }
-  66%  { transform: translate(60px, -35px) rotate(-10deg); }
-  100% { transform: translate(80px, -50px) rotate(-15deg); }
+  0% {
+    transform: translate(80px, -50px) rotate(-15deg);
+  }
+
+  33% {
+    transform: translate(40px, -10px) rotate(10deg);
+  }
+
+  66% {
+    transform: translate(60px, -35px) rotate(-10deg);
+  }
+
+  100% {
+    transform: translate(80px, -50px) rotate(-15deg);
+  }
 }
 
 @keyframes floatGraph {
-  0%, 100% { transform: translateY(15px) rotate(-10deg); }
-  50%       { transform: translateY(10px) rotate(10deg); }
+
+  0%,
+  100% {
+    transform: translateY(15px) rotate(-10deg);
+  }
+
+  50% {
+    transform: translateY(10px) rotate(10deg);
+  }
 }
 
 .visualContainer {

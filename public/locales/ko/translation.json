@@ -9,7 +9,7 @@
     "title": "데이터 속 숨겨진\n패턴을 시각화합니다."
   },
   "company": {
-    "title": "Rad Science",
+    "title": "RAD SCIENCE",
     "slogan": "혁신적이고 신뢰할 수 있는\n글로벌 의료 연구 파트너",
     "description": "래드 사이언스는 의료 및 행동 연구 현장의\n데이터 공백을 메우기 위해 설립된\nAI 데이터 분석 및 소프트웨어 솔루션 전문 기업입니다.",
     "detail": "미국 아이오와 대학병원 및 위스콘신 대학병원 등\n세계적인 연구 기관과의 협업 경험을 바탕으로,\n연구자들이 복잡한 데이터 분석과 소프트웨어 개발의 부담에서 벗어나\n본질적인 연구 성과에 집중할 수 있도록 돕습니다.",
@@ -29,28 +29,478 @@
     ],
     "features": [
       {
+        "title": "Topological Data Analysis",
+        "desc": "위상 기하학 기반 딥러닝으로 고차원 바이오메디컬 데이터에서 유의미한 패턴을 추출합니다",
+        "icon": {
+          "viewBox": "-50 -50 100 100",
+          "elements": [
+            {
+              "type": "circle",
+              "cx": 0,
+              "cy": -30,
+              "r": 7
+            },
+            {
+              "type": "circle",
+              "cx": -32,
+              "cy": 10,
+              "r": 7
+            },
+            {
+              "type": "circle",
+              "cx": 32,
+              "cy": 10,
+              "r": 7
+            },
+            {
+              "type": "circle",
+              "cx": 0,
+              "cy": 42,
+              "r": 7
+            },
+            {
+              "type": "line",
+              "x1": -4,
+              "y1": -23,
+              "x2": -27,
+              "y2": 4
+            },
+            {
+              "type": "line",
+              "x1": 4,
+              "y1": -23,
+              "x2": 27,
+              "y2": 4
+            },
+            {
+              "type": "line",
+              "x1": -25,
+              "y1": 15,
+              "x2": -5,
+              "y2": 36
+            },
+            {
+              "type": "line",
+              "x1": 25,
+              "y1": 15,
+              "x2": 5,
+              "y2": 36
+            },
+            {
+              "type": "line",
+              "x1": -25,
+              "y1": 10,
+              "x2": 25,
+              "y2": 10
+            },
+            {
+              "type": "line",
+              "x1": -27,
+              "y1": 15,
+              "x2": 27,
+              "y2": 5,
+              "strokeDasharray": "3 3"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Computer Vision",
+        "desc": "미국 주요 병원과 협력하여 AI 기반 의료 영상 분석으로 임상 진단 정확도를 향상시킵니다",
+        "icon": {
+          "viewBox": "-50 -50 100 100",
+          "elements": [
+            {
+              "type": "path",
+              "d": "M-38,0 Q-20,-28 0,-28 Q20,-28 38,0 Q20,28 0,28 Q-20,28 -38,0Z"
+            },
+            {
+              "type": "circle",
+              "cx": 0,
+              "cy": 0,
+              "r": 11
+            },
+            {
+              "type": "circle",
+              "cx": 0,
+              "cy": 0,
+              "r": 4,
+              "filled": true
+            },
+            {
+              "type": "line",
+              "x1": -20,
+              "y1": -38,
+              "x2": -20,
+              "y2": -28
+            },
+            {
+              "type": "line",
+              "x1": 0,
+              "y1": -42,
+              "x2": 0,
+              "y2": -28
+            },
+            {
+              "type": "line",
+              "x1": 20,
+              "y1": -38,
+              "x2": 20,
+              "y2": -28
+            }
+          ]
+        }
+      },
+      {
+        "title": "Multivariate Time Series Event Detection",
+        "desc": "EEG, ECG 등 다채널 생체 신호 데이터에서 임상적으로 중요한 이벤트를 실시간 감지합니다",
+        "icon": {
+          "viewBox": "-50 -55 100 110",
+          "elements": [
+            {
+              "type": "line",
+              "x1": -38,
+              "y1": -22,
+              "x2": 38,
+              "y2": -22
+            },
+            {
+              "type": "polyline",
+              "points": "-38,-22 -24,-22 -18,-40 -12,-4 -6,-22 6,-22 12,-36 18,-8 24,-22 38,-22"
+            },
+            {
+              "type": "line",
+              "x1": -38,
+              "y1": 2,
+              "x2": 38,
+              "y2": 2
+            },
+            {
+              "type": "polyline",
+              "points": "-38,2 -22,2 -16,18 -10,-14 -4,2 10,2 16,14 22,-8 38,2"
+            },
+            {
+              "type": "line",
+              "x1": -38,
+              "y1": 26,
+              "x2": 38,
+              "y2": 26
+            },
+            {
+              "type": "polyline",
+              "points": "-38,26 -28,26 -20,38 -12,14 -4,26 8,26 16,34 24,18 38,26"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Voice Pitch Visual Tracking",
+        "desc": "딥러닝 기반 음성 바이오마커 시각화로 언어 장애 및 음성 관련 임상 연구를 지원합니다",
+        "icon": {
+          "viewBox": "-50 -45 100 90",
+          "elements": [
+            {
+              "type": "polyline",
+              "points": "-36,0 -28,0 -22,-18 -16,18 -10,-30 -4,30 2,-18 8,18 14,-8 20,8 28,0 36,0"
+            },
+            {
+              "type": "path",
+              "d": "M-36,18 Q-18,4 0,18 Q18,32 36,18"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Mobile/Desktop Application",
+        "desc": "임상 데이터 수집과 연구실 워크플로우에 최적화된 연구용 애플리케이션을 개발합니다",
+        "icon": {
+          "viewBox": "-50 -50 100 100",
+          "elements": [
+            {
+              "type": "rect",
+              "x": -34,
+              "y": -36,
+              "width": 44,
+              "height": 58,
+              "rx": 4
+            },
+            {
+              "type": "line",
+              "x1": -34,
+              "y1": 12,
+              "x2": 10,
+              "y2": 12
+            },
+            {
+              "type": "circle",
+              "cx": -12,
+              "cy": 18,
+              "r": 2.5,
+              "filled": true
+            },
+            {
+              "type": "rect",
+              "x": 14,
+              "y": -22,
+              "width": 26,
+              "height": 40,
+              "rx": 3
+            },
+            {
+              "type": "line",
+              "x1": 14,
+              "y1": 10,
+              "x2": 40,
+              "y2": 10
+            },
+            {
+              "type": "circle",
+              "cx": 27,
+              "cy": 16,
+              "r": 2,
+              "filled": true
+            }
+          ]
+        }
+      },
+      {
         "title": "AI Research",
-        "desc": "딥러닝 기반 End-to-End 데이터 파이프라인 구축"
+        "desc": "의료 및 생명과학 분야의 미충족 과제 해결을 위한 최신 AI 연구를 수행합니다",
+        "icon": {
+          "viewBox": "-50 -50 100 100",
+          "elements": [
+            {
+              "type": "path",
+              "d": "M0,-36 C-10,-38 -28,-30 -32,-16 C-36,-4 -28,10 -20,16 C-16,20 -14,28 -14,34 L14,34 C14,28 16,20 20,16 C28,10 36,-4 32,-16 C28,-30 10,-38 0,-36Z"
+            },
+            {
+              "type": "line",
+              "x1": 0,
+              "y1": -14,
+              "x2": 0,
+              "y2": 14
+            },
+            {
+              "type": "circle",
+              "cx": -18,
+              "cy": -8,
+              "r": 4
+            },
+            {
+              "type": "circle",
+              "cx": 18,
+              "cy": -8,
+              "r": 4
+            },
+            {
+              "type": "line",
+              "x1": -14,
+              "y1": -8,
+              "x2": 14,
+              "y2": -8
+            },
+            {
+              "type": "line",
+              "x1": -14,
+              "y1": -8,
+              "x2": 0,
+              "y2": 0
+            },
+            {
+              "type": "line",
+              "x1": 14,
+              "y1": -8,
+              "x2": 0,
+              "y2": 0
+            }
+          ]
+        }
       },
       {
         "title": "Global Network",
-        "desc": "미국 주요 대학병원과의 긴밀한 연구 협업"
+        "desc": "전 세계 주요 병원, 연구기관, 대학과의 협력 네트워크를 통해 연구 영향력을 확장합니다",
+        "icon": {
+          "viewBox": "-50 -50 100 100",
+          "elements": [
+            {
+              "type": "circle",
+              "cx": 0,
+              "cy": 0,
+              "r": 34
+            },
+            {
+              "type": "ellipse",
+              "cx": 0,
+              "cy": 0,
+              "rx": 18,
+              "ry": 34
+            },
+            {
+              "type": "line",
+              "x1": -34,
+              "y1": 0,
+              "x2": 34,
+              "y2": 0
+            },
+            {
+              "type": "line",
+              "x1": -32,
+              "y1": -16,
+              "x2": 32,
+              "y2": -16
+            },
+            {
+              "type": "line",
+              "x1": -32,
+              "y1": 16,
+              "x2": 32,
+              "y2": 16
+            },
+            {
+              "type": "circle",
+              "cx": -14,
+              "cy": -20,
+              "r": 4,
+              "filled": true
+            },
+            {
+              "type": "circle",
+              "cx": 20,
+              "cy": 8,
+              "r": 4,
+              "filled": true
+            },
+            {
+              "type": "line",
+              "x1": -11,
+              "y1": -18,
+              "x2": 17,
+              "y2": 9
+            }
+          ]
+        }
       },
       {
         "title": "Technical Support",
-        "desc": "연구 목적에 최적화된 맞춤형 SW 솔루션"
+        "desc": "연구실 및 임상 환경에 특화된 맞춤형 소프트웨어와 전담 기술 지원을 제공합니다",
+        "icon": {
+          "viewBox": "-50 -50 100 100",
+          "elements": [
+            {
+              "type": "path",
+              "d": "M10,-34 C22,-30 28,-16 22,-6 L-24,38 C-28,42 -34,40 -36,36 C-38,32 -36,26 -32,24 L14,-22 C18,-28 16,-36 10,-34Z"
+            },
+            {
+              "type": "circle",
+              "cx": 16,
+              "cy": -28,
+              "r": 5
+            },
+            {
+              "type": "line",
+              "x1": 24,
+              "y1": -6,
+              "x2": 36,
+              "y2": -18
+            },
+            {
+              "type": "line",
+              "x1": 24,
+              "y1": -18,
+              "x2": 36,
+              "y2": -6
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "projects": {
+    "sectionTitle": "프로젝트",
+    "items": [
+            {
+        "id": "gvpt",
+        "title": "GVPT",
+        "description": "시각적 피치 추적을 위한 실시간 실험 플랫폼입니다. 정밀한 피치 감지와 동적 시각 타겟을 구현하여 통제된 행동 및 음성 실험을 지원합니다.",
+        "affiliation": null,
+        "context": "행동 및 음성 실험",
+        "status": "live",
+        "link": "__Link__",
+        "linkLabel": "사이트 방문",
+        "demo": "/GVPT_Demo.mp4",
+        "tags": [
+          "피치 추적",
+          "실시간",
+          "음성",
+          "실험"
+        ]
       },
       {
-        "title": "AI Research",
-        "desc": "딥러닝 기반 End-to-End 데이터 파이프라인 구축"
+        "id": "apt",
+        "title": "APT",
+        "description": "피치 기반 실험을 위한 실시간 청각 피드백 시스템입니다. 정확한 피치 감지와 청각 타겟 안내를 제공하여 통제된 행동 연구를 지원합니다.",
+        "affiliation": null,
+        "context": "행동 연구",
+        "status": "live",
+        "link": "__Link__",
+        "linkLabel": "사이트 방문",
+        "demo": "/APT_Demo.mp4",
+        "tags": [
+          "청각 피드백",
+          "피치 감지",
+          "실시간",
+          "실험"
+        ]
+      },
+            {
+        "id": "uiowa-remote-voice",
+        "title": "UIowa Remote Voice",
+        "description": "음성 및 설문 기반 의료 연구를 위한 원격 데이터 수집 플랫폼입니다. 참가자들이 임상 환경 밖에서 고품질 녹음과 메타데이터를 제공할 수 있게 하여 연구의 접근성과 확장성을 향상시킵니다.",
+        "affiliation": "아이오와 대학교",
+        "context": "의료 음성 연구",
+        "status": "live",
+        "link": "__Link__",
+        "linkLabel": "사이트 방문",
+        "tags": [
+          "음성",
+          "원격 데이터 수집",
+          "의료 연구",
+          "설문"
+        ]
       },
       {
-        "title": "Global Network",
-        "desc": "미국 주요 대학병원과의 긴밀한 연구 협업"
+        "id": "3d-lipid-projection",
+        "title": "3D Lipid Projection",
+        "description": "고차원 지질체학 데이터를 위한 연구 시각화 도구입니다. Isomap과 UMAP을 사용해 지질 및 피험자를 투영하여 전역적·국소적 매니폴드 구조를 파악하고, 하위 머신러닝 및 위상 분석을 위한 피처 선택을 지원합니다.",
+        "affiliation": "매니토바 대학교",
+        "context": "종양 연구 목적으로 개발",
+        "status": "in_progress",
+        "link": null,
+        "linkLabel": null,
+        "tags": [
+          "시각화",
+          "지질체학",
+          "UMAP",
+          "Isomap",
+          "머신러닝"
+        ]
       },
       {
-        "title": "Technical Support",
-        "desc": "연구 목적에 최적화된 맞춤형 SW 솔루션"
+        "id": "3d-stack-image-annotator",
+        "title": "3D Stack Image Annotator",
+        "description": "오가노이드 이미징을 위한 3D 인식 어노테이션 도구입니다. 복잡한 3D 구조 내에서 공간적 일관성을 유지하면서 이미지 스택 전반에 걸친 효율적인 레이블링을 지원합니다. 암 오가노이드 분석을 위한 딥러닝 파이프라인을 지원하도록 설계되었습니다.",
+        "affiliation": "아이오와 대학교",
+        "context": "암 오가노이드 분석",
+        "status": "in_progress",
+        "link": null,
+        "linkLabel": null,
+        "tags": [
+          "어노테이션",
+          "3D 이미징",
+          "딥러닝",
+          "오가노이드",
+          "암"
+        ]
       }
     ]
   },
