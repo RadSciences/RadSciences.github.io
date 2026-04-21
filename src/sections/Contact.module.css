@@ -1,7 +1,7 @@
 .section {
   /* background-color: #0f172a; */
   min-height: 100vh;
-  padding: 100px 0;
+  padding: 100px 20px;
   width: 100%;
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -16,7 +16,7 @@
 }
 
 .subtitle {
- display: inline-block;
+  display: inline-block;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.3em;
@@ -27,7 +27,7 @@
 }
 
 .title {
-  font-size: clamp(2rem, 5vw, 3.5rem); 
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 24px;
@@ -50,10 +50,11 @@
 
 .stats {
   display: flex;
-  gap: 60px; /* 요소 간 간격을 조금 더 넓혀 가독성 확보 */
+  gap: 60px;
+  /* 요소 간 간격을 조금 더 넓혀 가독성 확보 */
   margin-bottom: 60px;
   /* 기존 노란색 라인 대신 테크니컬한 사이언 컬러와 그라데이션 적용 */
-  border-left: 3px solid #00f2ff; 
+  border-left: 3px solid #00f2ff;
   padding-left: 25px;
   position: relative;
 }
@@ -79,24 +80,22 @@
 
 .statNum {
   display: block;
-  font-size: 32px; /* 가독성을 위해 크기 소폭 상향 */
+  font-size: 32px;
   font-weight: 800;
   color: #fff;
-  font-family: 'Inter', sans-serif; /* 숫자가 명확히 보이는 폰트 권장 */
-  
-  /* 숫자 애니메이션 최적화 */
+  font-family: 'Inter', sans-serif;
+
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.5px;
-  
-  /* 생동감을 위한 미세한 텍스트 글로우 */
+
   text-shadow: 0 0 12px rgba(0, 242, 255, 0.4);
 }
 
 .statLabel {
   font-size: 12px;
-  color: #94a3b8; /* 가독성을 위해 기존보다 약간 밝게 조정 */
-  text-transform: uppercase; /* 소문자보다 전문적인 느낌 부여 */
-  letter-spacing: 1.5px; /* 자간을 넓혀 데이터 라벨 느낌 강조 */
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   font-weight: 500;
 }
 
@@ -119,9 +118,10 @@
 }
 
 
-.form{
+.form {
   padding-top: 100px;
 }
+
 .inputGroup input,
 .inputGroup textarea {
   width: 100%;
@@ -135,9 +135,19 @@
   transition: border-color 0.3s;
 }
 
+.inputGroup textarea {
+  min-height: 240px;
+}
+
 .inputGroup input:focus,
 .inputGroup textarea:focus {
   border-color: #ffb800;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
 }
 
 .contactButton {
@@ -161,12 +171,13 @@
   .section {
     /* background-color: #0f172a; */
     min-height: 100vh;
-    padding: 80px 20px;
+    padding: 100px 20px;
     width: 100%;
     color: #fff;
   }
 
-  .stats, .contactDetails {
+  .stats,
+  .contactDetails {
     display: none;
   }
 
@@ -175,5 +186,9 @@
     text-align: center;
     gap: 40px;
   }
-  
+
+  .inputGroup textarea {
+    min-height: fit-content;
+  }
+
 }

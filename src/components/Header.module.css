@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 64px;
-  background-color: #000000e7;
+  background-color: #000000cf;
   z-index: 1000;
   box-shadow: 0 2px 5px #01359cd1;
   padding-bottom: 1px;
@@ -42,13 +42,15 @@
   object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(255, 184, 0, 0.2));
 }
-.name{
+
+.name {
   background: linear-gradient(0deg, #ffffff, #ffda7b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.3rem;
   font-weight: 500;
 }
+
 .navList {
   display: flex;
   align-items: end;
@@ -112,16 +114,25 @@
 ----------------------------- */
 
 @media (max-width: 1024px) {
+
   .navList {
     gap: 1.5rem;
   }
 
+  .navLink {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .name {
+    display: none;
+  }
+
   .header {
     height: 56px;
   }
+
   .nav {
     padding: 0 1rem;
   }
@@ -135,11 +146,13 @@
   }
 
   .navLink {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
+
   .langSwitchWrapper {
     padding-bottom: 18px;
   }
+
   .pillContainer {
     width: 80px;
     margin-left: 0.5rem;

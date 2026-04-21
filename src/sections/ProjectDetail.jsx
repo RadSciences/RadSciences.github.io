@@ -33,56 +33,53 @@ export default function ProjectDetail() {
         {backLabel}
       </button>
 
-      <span className={`${styles.badge} ${styles[project.status]}`}>
-        {project.status === 'live' ? 'Live' : 'In Progress'}
-      </span>
+      <div className={styles.header}>
+        <h1 className={styles.title}>{project.title}</h1>
+        <span className={`${styles.badge} ${styles[project.status]}`}>
+          {project.status === 'live' ? 'Live' : 'In Progress'}
+        </span>
+      </div>
 
-      <h1 className={styles.title}>{project.title}</h1>
+      {/* 미디어와 정보를 감싸는 컨테이너 */}
+      <div className={styles.layoutContainer}>
 
-      {project.affiliation && (
-        <p className={styles.affiliation}>{project.affiliation}</p>
-      )}
-
-      {project.context && (
-        <p className={styles.context}>{project.context}</p>
-      )}
-
-      {project.demo ? (
-        <video
-          className={styles.mainVideo}
-          src={project.demo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          controls
-        />
-      ) : (
-        <div className={styles.mainImage} >
-          {currentLang=="ko"? <span>준비중입니다.</span>:<span>In preparation</span>}
+        {/* 왼쪽: 비주얼 영역 */}
+        <div className={styles.mediaSide}>
+          {project.demo ? (
+            <video
+              className={styles.mainVideo}
+              src={project.demo}
+              autoPlay muted loop playsInline controls
+            />
+          ) : (
+            <div className={styles.mainImage}>
+              <span>{currentLang === "ko" ? "준비중입니다." : "In preparation"}</span>
+            </div>
+          )}
         </div>
-      )}
 
-      <div className={styles.contentBody}>
-        <p>{project.description}</p>
+        {/* 오른쪽: 텍스트 정보 영역 */}
+        <div className={styles.infoSide}>
+          {project.affiliation && <p className={styles.affiliation}>{project.affiliation}</p>}
+          {project.context && <p className={styles.context}>{project.context}</p>}
+
+          <div className={styles.contentBody}>
+            <p>{project.description}</p>
+          </div>
+
+          <div className={styles.tags}>
+            {project.tags.map((tag) => (
+              <span key={tag} className={styles.tag}>{tag}</span>
+            ))}
+          </div>
+
+          {hasLink && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.link}>
+              {project.linkLabel || visitLabel} →
+            </a>
+          )}
+        </div>
       </div>
-
-      <div className={styles.tags}>
-        {project.tags.map((tag) => (
-          <span key={tag} className={styles.tag}>{tag}</span>
-        ))}
-      </div>
-
-      {hasLink && (
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.link}
-        >
-          {project.linkLabel || visitLabel} →
-        </a>
-      )}
     </article>
   );
 }
