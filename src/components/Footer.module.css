@@ -10,7 +10,7 @@
   margin: 0 auto;
   padding: 0 1.5rem; /* px-6 */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: #6b7280; /* text-gray-500 */
   font-size: 0.875rem; /* text-sm */

@@ -52,7 +52,7 @@ export default function Header() {
         {/* 로고 영역 */}
         <div className={styles.logoArea} onClick={handleLogoClick}>
           <img src={logo} alt="Red Science Logo" className={styles.logoImage} />
-          <span className={styles.name}>RAD SCIENCE</span>
+          <span className={styles.name}>Rad Science</span>
         </div>
 
         {/* 메뉴 영역 */}

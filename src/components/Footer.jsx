@@ -8,10 +8,10 @@ export default function Footer() {
           © 2026 Rad Science. All rights reserved.
         </p>
         
-        <div className={styles.links}>
+        {/* <div className={styles.links}>
           <span className={styles.linkItem}>Terms</span>
           <span className={styles.linkItem}>Privacy</span>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
