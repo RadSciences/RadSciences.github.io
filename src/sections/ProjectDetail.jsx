@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
 import styles from './ProjectDetail.module.css';
 
@@ -10,9 +11,18 @@ export default function ProjectDetail() {
   const items = t('projects.items', { returnObjects: true });
   const project = Array.isArray(items) ? items.find((p) => p.id === id) : null;
 
-  const backLabel = currentLang === 'ko' ? '← 프로젝트 목록으로' : '← Back to Projects';
+  const backLabel = currentLang === 'ko' ? '목록으로' : 'Back to Lists';
   const notFound = currentLang === 'ko' ? '프로젝트를 찾을 수 없습니다.' : 'Project not found.';
   const visitLabel = currentLang === 'ko' ? '사이트 방문' : 'Visit Site';
+  // 컴포넌트 안에 추가
+  const [dots, setDots] = useState('');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDots(prev => prev.length >= 3 ? '' : prev + '.');
+    }, 200);
+    return () => clearInterval(interval);
+  }, []);
 
   if (!project) {
     return (
@@ -34,10 +44,10 @@ export default function ProjectDetail() {
       </button>
 
       <div className={styles.header}>
-        <h1 className={styles.title}>{project.title}</h1>
         <span className={`${styles.badge} ${styles[project.status]}`}>
           {project.status === 'live' ? 'Live' : 'In Progress'}
         </span>
+        <h1 className={styles.title}>{project.title}</h1>
       </div>
 
       {/* 미디어와 정보를 감싸는 컨테이너 */}
@@ -53,7 +63,10 @@ export default function ProjectDetail() {
             />
           ) : (
             <div className={styles.mainImage}>
-              <span>{currentLang === "ko" ? "준비중입니다." : "In preparation"}</span>
+              <span>
+                {currentLang === "ko" ? "준비중입니다" : "In preparation"}
+                <span className={styles.dots}>{dots}</span>
+              </span>
             </div>
           )}
         </div>

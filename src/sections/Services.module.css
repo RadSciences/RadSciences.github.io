@@ -14,7 +14,7 @@
 
 /* Header */
 .header {
-  margin-bottom: 56px;
+  margin-bottom: 80px;
 }
 
 .subtitle {
@@ -28,14 +28,12 @@
 }
 
 .title {
-  font-size: clamp(2rem, 5vw, 3rem); 
+  font-size: clamp(2rem, 5vw, 3rem);
   font-family: 'Poppins', sans-serif;
   letter-spacing: -0.04em;
   background: linear-gradient(90deg, #fff, #818cf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.1;
-  margin: 0;
 }
 
 /* Grid: 4 cols desktop, 2 tablet, 1 mobile */

@@ -42,74 +42,70 @@ export default function Projects() {
   // CSS에서 card 너비를 calc(33.33% - 13.33px) 처럼 잡았을 때 정확히 맞는 공식
   const calculateTranslate = () => {
 
-      if (currentIndex === 0) return '0%';
+    if (currentIndex === 0) return '0%';
 
-      // 모바일(1개일 때)은 간편하게 인덱스 * 100% + 간격만큼 이동
-      if (itemsPerView === 1) {
-        return `calc(-${currentIndex} * (100% + ${gap}px))`;
-      }
+    // 모바일(1개일 때)은 간편하게 인덱스 * 100% + 간격만큼 이동
+    if (itemsPerView === 1) {
+      return `calc(-${currentIndex} * (100% + ${gap}px))`;
+    }
 
-      // PC/태블릿: (카드너비 + gap)을 통째로 이동
-      // 카드너비 = (100% - (gap * (view-1))) / view
-      return `calc(-${currentIndex} * ((100% - ${gap * (itemsPerView - 1)}px) / ${itemsPerView} + ${gap}px))`;
-    };
+    // PC/태블릿: (카드너비 + gap)을 통째로 이동
+    // 카드너비 = (100% - (gap * (view-1))) / view
+    return `calc(-${currentIndex} * ((100% - ${gap * (itemsPerView - 1)}px) / ${itemsPerView} + ${gap}px))`;
+  };
 
 
-    return (
-      <section id="projects" className={styles.section}>
-        <div className={styles.container}>
-          <div className={styles.headerRow}>
-            <div>
-              <span className={styles.subtitle}>OUR WORKS</span>
-              <h4 className={styles.title}>Projects</h4>
-            </div>
+  return (
+    <section id="projects" className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.headerRow}>
+            <span className={styles.subtitle}>OUR WORKS</span>
+            <h4 className={styles.title}>Projects</h4>
+        </div>
+        <div className={styles.controls}>
+          <button onClick={prevSlide} className={styles.navButton}>&larr;</button>
+          <button onClick={nextSlide} className={styles.navButton}>&rarr;</button>
+        </div>
+        <div className={styles.sliderWindow}>
+          <div
+            className={styles.grid}
+            style={{
+              transform: `translateX(${calculateTranslate()})`,
+              display: 'flex',
+              gap: `${gap}px`,
+              transition: 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)'
+            }}
+          >
+            {Array.isArray(items) && items.map((project) => (
+              <div
+                key={project.id}
+                className={styles.card}
+                onClick={() => navigate(`/projects/${project.id}`)}
+                // CSS 모듈 사용 시 flex-shrink 보장
+                style={{ flexShrink: 0 }}
+              >
+                <span className={`${styles.badge} ${styles[project.status]}`}>
+                  {project.status === 'live' ? 'Live' : 'In Progress'}
+                </span>
 
-            <div className={styles.controls}>
-              <button onClick={prevSlide} className={styles.navButton}>&larr;</button>
-              <button onClick={nextSlide} className={styles.navButton}>&rarr;</button>
-            </div>
-          </div>
+                <h3 className={styles.cardTitle}>{project.title}</h3>
 
-          <div className={styles.sliderWindow}>
-            <div
-              className={styles.grid}
-              style={{
-                transform: `translateX(${calculateTranslate()})`,
-                display: 'flex',
-                gap: `${gap}px`,
-                transition: 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)'
-              }}
-            >
-              {Array.isArray(items) && items.map((project) => (
-                <div
-                  key={project.id}
-                  className={styles.card}
-                  onClick={() => navigate(`/projects/${project.id}`)}
-                  // CSS 모듈 사용 시 flex-shrink 보장
-                  style={{ flexShrink: 0 }}
-                >
-                  <span className={`${styles.badge} ${styles[project.status]}`}>
-                    {project.status === 'live' ? 'Live' : 'In Progress'}
-                  </span>
+                {project.affiliation && (
+                  <p className={styles.affiliation}>{project.affiliation}</p>
+                )}
 
-                  <h3 className={styles.cardTitle}>{project.title}</h3>
+                <p className={styles.cardDesc}>{project.description}</p>
 
-                  {project.affiliation && (
-                    <p className={styles.affiliation}>{project.affiliation}</p>
-                  )}
-
-                  <p className={styles.cardDesc}>{project.description}</p>
-
-                  <div className={styles.tags}>
-                    {project.tags.map((tag) => (
-                      <span key={tag} className={styles.tag}>{tag}</span>
-                    ))}
-                  </div>
+                <div className={styles.tags}>
+                  {project.tags.map((tag) => (
+                    <span key={tag} className={styles.tag}>{tag}</span>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
+}
