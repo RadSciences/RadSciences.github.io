@@ -427,7 +427,7 @@
         "status": "live",
         "link": "__Link__",
         "linkLabel": "사이트 방문",
-        "demo": "/GVPT_Demo.mp4",
+        "demo": "/demos/GVPT_Demo.mp4",
         "tags": [
           "피치 추적",
           "실시간",
@@ -444,7 +444,7 @@
         "status": "live",
         "link": "__Link__",
         "linkLabel": "사이트 방문",
-        "demo": "/APT_Demo.mp4",
+        "demo": "/demos/APT_Demo.mp4",
         "tags": [
           "청각 피드백",
           "피치 감지",

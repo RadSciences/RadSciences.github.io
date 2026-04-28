@@ -1,9 +1,10 @@
 .section {
   margin: 0 auto;
-  padding: 100px 0px;
+  padding: 80px 20px;
   color: #ffffff;
   min-height: 100vh;
   max-width: 1280px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .layoutContainer {
@@ -17,6 +18,7 @@
   flex: 1.5;
   /* 비디오가 더 넓게 */
   min-width: 0;
+  margin: 0 auto;
   /* flex 자식의 너비 버그 방지 */
 }
 
@@ -69,6 +71,7 @@
 /* Title */
 .title {
   font-size: clamp(2rem, 5vw, 3.5rem);
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -110,8 +113,11 @@
   width: 100%;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #1a1a1a;
+  background-color: #1a1a1a;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainImage>span {
@@ -207,6 +213,7 @@
   .mainImage,
   .mainVideo {
     font-size: 0.7rem;
+    width: 85vw;
   }
 
   .mainImage>span {
@@ -215,5 +222,8 @@
 
   .title {
     font-size: 2rem;
+  }
+  .contentBody p{
+    font-size: 15px;
   }
 }

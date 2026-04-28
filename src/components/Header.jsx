@@ -1,4 +1,4 @@
-import logo from '../assets/logos/logo_only.png';
+import logo from '../assets/images/logo/logo_only.png';
 import { useLanguage } from '../hooks/useLanguage';
 import { useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -11,10 +11,10 @@ export default function Header() {
   const location = useLocation();
 
   const navItems = useMemo(() => [
-    { name: t('header.about'),    href: '#about' },
+    { name: t('header.about'), href: '#about' },
     { name: t('header.services'), href: '#services' },
     { name: t('header.projects'), href: '#projects' },
-    { name: t('header.contact'),  href: '#contact' },
+    { name: t('header.contact'), href: '#contact' },
   ], [t]);
 
   // 메인 페이지면 anchor 스크롤, 상세 페이지면 메인으로 이동 후 스크롤
@@ -51,8 +51,10 @@ export default function Header() {
       <nav className={styles.nav}>
         {/* 로고 영역 */}
         <div className={styles.logoArea} onClick={handleLogoClick}>
-          <img src={logo} alt="Red Science Logo" className={styles.logoImage} />
-          <span className={styles.name}>Rad Science</span>
+          <div className={styles.imgContainer}>
+            <img src={logo} alt="Red Science Logo" className={styles.logoImage} />
+          </div>
+          <span className={styles.name}><em>Rad</em> Science</span>
         </div>
 
         {/* 메뉴 영역 */}

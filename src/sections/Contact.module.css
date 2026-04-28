@@ -1,7 +1,6 @@
 .section {
-  /* background-color: #0f172a; */
-  min-height: 100vh;
-  padding: 100px 20px;
+  min-height: 85vh;
+  padding: 140px 20px 80px 20px;
   width: 100%;
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -18,8 +17,7 @@
 .subtitle {
   display: inline-block;
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.3em;
+  font-weight: 600;
   text-transform: uppercase;
   color: #818cf8;
   margin-bottom: 16px;
@@ -28,7 +26,8 @@
 
 .title {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.04em;
   line-height: 1.1;
   margin-bottom: 24px;
 }
@@ -40,7 +39,7 @@
 }
 
 .description {
-  font-size: 17px;
+  font-size: clamp(0.95rem, 2vw, 17px);
   color: #94a3b8;
   line-height: 1.6;
   margin-bottom: 40px;
@@ -51,15 +50,12 @@
 .stats {
   display: flex;
   gap: 60px;
-  /* 요소 간 간격을 조금 더 넓혀 가독성 확보 */
   margin-bottom: 60px;
-  /* 기존 노란색 라인 대신 테크니컬한 사이언 컬러와 그라데이션 적용 */
   border-left: 3px solid #00f2ff;
   padding-left: 25px;
   position: relative;
 }
 
-/* 왼쪽 라인에 은은한 글로우 효과 추가 */
 .stats::before {
   content: '';
   position: absolute;
@@ -80,19 +76,17 @@
 
 .statNum {
   display: block;
-  font-size: 32px;
+  font-size: clamp(1.5rem, 3vw, 32px);
   font-weight: 800;
   color: #fff;
   font-family: 'Inter', sans-serif;
-
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.5px;
-
   text-shadow: 0 0 12px rgba(0, 242, 255, 0.4);
 }
 
 .statLabel {
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -113,10 +107,9 @@
 }
 
 .detailLink p {
-  font-size: 15px;
+  font-size: clamp(13px, 1.5vw, 15px);
   color: #e2e8f0;
 }
-
 
 .form {
   padding-top: 100px;
@@ -133,6 +126,7 @@
   margin-bottom: 15px;
   outline: none;
   transition: border-color 0.3s;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 .inputGroup textarea {
@@ -157,6 +151,7 @@ textarea::placeholder {
   font-weight: 700;
   padding: 16px;
   border-radius: 8px;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   line-height: 1;
   cursor: pointer;
   border: none;
@@ -169,8 +164,7 @@ textarea::placeholder {
 
 @media (max-width: 768px) {
   .section {
-    /* background-color: #0f172a; */
-    min-height: 100vh;
+    /* min-height: 70vh; */
     padding: 100px 20px;
     width: 100%;
     color: #fff;
@@ -187,8 +181,19 @@ textarea::placeholder {
     gap: 40px;
   }
 
+  .description {
+    max-width: 100%;
+    min-height: unset;
+  }
+
   .inputGroup textarea {
     min-height: fit-content;
   }
 
+  .form {
+    padding-top: 0;
+  }
+  .contactButton{
+    margin-top: 50px;
+  }
 }

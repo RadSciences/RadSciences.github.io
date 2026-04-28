@@ -58,9 +58,9 @@ export default function Projects() {
     return (
       <section id="projects" className={styles.section}>
         <div className={styles.container}>
-          <span className={styles.subtitle}>OUR WORKS</span>
           <div className={styles.headerRow}>
             <div>
+              <span className={styles.subtitle}>OUR WORKS</span>
               <h4 className={styles.title}>Projects</h4>
             </div>
 

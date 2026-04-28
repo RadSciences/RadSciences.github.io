@@ -1,3 +1,4 @@
+import aboutPic from '../assets/images/main/aboutReal.png'
 import { useLanguage } from '../hooks/useLanguage';
 import styles from './About.module.css';
 
@@ -13,14 +14,14 @@ export default function About() {
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.subtitle}>About us</span>
-          <h2 className={styles.title}>{t('company.title')}</h2>
+          <h2 className={styles.title}>Rad Science</h2>
         </div>
 
         <div className={styles.mainGrid}>
           <div className={styles.visualSide}>
             <div className={styles.imgContainer}>
               {/* <img className={styles.img} src='./aboutSimple.png'></img> */}
-              <img className={styles.img} src='./aboutReal.png'></img>
+              <img className={styles.img} src={aboutPic} />
             </div>
 
             <div className={styles.statsContainer}>

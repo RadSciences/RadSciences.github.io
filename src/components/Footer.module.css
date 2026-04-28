@@ -1,7 +1,7 @@
 .footer {
   padding: 1.5rem 0; /* py-12 */
   border-top: 1px solid #01359c; /* border-gray-100 */
-  background-color: #2a0101; /* bg-white */
+  background-color: #000000cf;
   flex-shrink: 0;
 }
 
@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   color: #6b7280; /* text-gray-500 */
-  font-size: 0.875rem; /* text-sm */
+  font-size: 0.9rem; /* text-sm */
 }
 
 .copyright {
@@ -32,4 +32,11 @@
 
 .linkItem:hover {
   color: #111827; /* 더 진한 색으로 호버 효과 */
+}
+
+@media (max-width: 768px) {
+.container{
+  font-size: 0.8rem;
+}
+
 }

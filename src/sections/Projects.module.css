@@ -1,9 +1,10 @@
 .section {
-  padding: 100px 0;
+  padding: 140px 0;
   min-height: 100vh;
   /* background-color: #0a0a0a; */
   color: #ffffff;
   overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .container {
@@ -15,8 +16,7 @@
 .subtitle {
   display: inline-block;
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.3em;
+  font-weight: 600;
   text-transform: uppercase;
   color: #818cf8;
   margin-bottom: 16px;
@@ -25,7 +25,7 @@
 
 .title {
   font-size: clamp(2rem, 5vw, 3rem); 
-  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: -0.04em;
   background: linear-gradient(135deg, #fff 30%, #818cf8 100%);
   -webkit-background-clip: text;
@@ -219,4 +219,5 @@
   .card { padding: 30px 24px; }
   .card { flex: 0 0 100%; } /* 1개 보이기 */
   .cardDesc { display: block; }
+  /* .headerRow{text-align: center;} */
 }

@@ -49,7 +49,7 @@ export default function ProjectDetail() {
             <video
               className={styles.mainVideo}
               src={project.demo}
-              autoPlay muted loop playsInline controls
+              playsInline controls
             />
           ) : (
             <div className={styles.mainImage}>

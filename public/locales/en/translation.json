@@ -427,7 +427,7 @@
         "status": "live",
         "link": "__Link__",
         "linkLabel": "Visit Site",
-        "demo": "/GVPT_Demo.mp4",
+        "demo": "/demos/GVPT_Demo.mp4",
         "tags": [
           "pitch tracking",
           "real-time",
@@ -444,7 +444,7 @@
         "status": "live",
         "link": "__Link__",
         "linkLabel": "Visit Site",
-        "demo": "/APT_Demo.mp4",
+        "demo": "/demos/APT_Demo.mp4",
         "tags": [
           "auditory feedback",
           "pitch detection",
