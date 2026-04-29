@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://radscience.kr/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://radscience.kr/projects/gvpt</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radscience.kr/projects/apt</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radscience.kr/projects/uiowa-remote-voice</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radscience.kr/projects/3d-lipid-projection</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://radscience.kr/projects/3d-stack-image-annotator</loc>
+    <lastmod>2026-04-29</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>
