@@ -178,7 +178,6 @@ textarea::placeholder {
 
   .container {
     grid-template-columns: 1fr;
-    text-align: center;
     gap: 40px;
   }
 
@@ -196,5 +195,10 @@ textarea::placeholder {
   }
   .contactButton{
     margin-top: 50px;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    text-align: center;
   }
 }
