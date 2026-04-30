@@ -13,8 +13,8 @@ export default function About() {
     <section id="about" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.subtitle}>About us</span>
-          <h2 className={styles.title}>Rad Science</h2>
+          <span className="section-subtitle">About us</span>
+          <h2 className="section-title">Rad Science</h2>
         </div>
 
         <div className={styles.mainGrid}>

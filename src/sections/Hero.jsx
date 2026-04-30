@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section className={styles.section}>
       <div className={styles.headerSection}>
-        <span className={styles.title}>INTELLIGENT BIO-DATA ENGINE</span>
+        <span className="section-title">INTELLIGENT BIO-DATA ENGINE</span>
         <h2 className={styles.copy}>{t('highlight.title')}</h2>
 
         <div className={styles.badgeStage}>

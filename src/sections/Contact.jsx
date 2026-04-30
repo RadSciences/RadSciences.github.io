@@ -78,8 +78,8 @@ export default function Contact() {
     <section id="contact" className={styles.section} ref={ref}>
       <div className={styles.container}>
         <div className={styles.infoArea}>
-          <div className={styles.subtitle}>CONTACT US</div>
-          <h2 className={styles.title}>
+          <div className="section-subtitle">CONTACT US</div>
+          <h2 className="section-title">
             Let's decode <br />
             <span className={styles.highlight}>your data together.</span>
           </h2>

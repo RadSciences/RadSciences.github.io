@@ -47,7 +47,7 @@ export default function ProjectDetail() {
         <span className={`${styles.badge} ${styles[project.status]}`}>
           {project.status === 'live' ? 'Live' : 'In Progress'}
         </span>
-        <h1 className={styles.title}>{project.title}</h1>
+        <h1 className="section-title">{project.title}</h1>
       </div>
 
       {/* 미디어와 정보를 감싸는 컨테이너 */}

@@ -17,25 +17,6 @@
   margin-bottom: 50px;
 }
 
-.subtitle {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #818cf8;
-  margin-bottom: 16px;
-  opacity: 0.8;
-}
-
-.title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: -0.04em;
-  background: linear-gradient(90deg, #fff, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .mainGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -47,21 +28,12 @@
   width: 100%;
   background: #0f0f0f;
   border: 1px solid rgba(20, 29, 30, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
 .img {
   width: 100%;
-}
-
-.logoText {
-  font-size: 1.5rem;
-  letter-spacing: 6px;
-  color: rgba(255, 255, 255, 0.1);
-  font-weight: 900;
+  display: block;
 }
 
 .statsContainer {
@@ -76,18 +48,17 @@
   text-align: center;
   border-right: 1px solid rgba(255, 255, 255, 0.262);
 }
-
 .statItem:last-child { border-right: none; }
 
 .statValue {
   display: block;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 800;
   color: #ffcd00;
 }
 
 .statLabel {
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
   color: #666;
 }
 
@@ -114,35 +85,10 @@
   white-space: pre-wrap;
 }
 
-@media (max-width: 600px) {
-  .mainGrid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .featureList {
-    grid-template-columns: 1fr;
-  }
-  .section {
-    padding: 60px 0;
-  }
-  .header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .subtitle {
-    font-size: 11px;
-    margin-bottom: 5px;
-  }
-  .statValue {
-    font-size: 1rem;
-  }
-  .statLabel {
-    font-size: 0.7rem;
-  }
-  .logoText {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-  }
-  .statsContainer {
-    margin-top: 10px;
-  }
+@media (max-width: 768px) {
+  .section { padding: 60px 20px; }
+  .container { width: 100%; }
+  .header { text-align: center; margin-bottom: 30px; }
+  .mainGrid { grid-template-columns: 1fr; gap: 30px; }
+  .statsContainer { margin-top: 10px; }
 }

@@ -1,7 +1,6 @@
 .section {
   min-height: 90vh;
-  padding: 100px 20px 80px 20px;
-  width: 100%;
+  padding: 100px 20px 80px;
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -12,30 +11,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 100px;
-}
-
-.subtitle {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #818cf8;
-  margin-bottom: 16px;
-  opacity: 0.8;
-}
-
-.title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-.highlight {
-  background: linear-gradient(90deg, #fff, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .description {
@@ -129,14 +104,10 @@
   font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
-.inputGroup textarea {
-  min-height: 240px;
-}
+.inputGroup textarea { min-height: 240px; }
 
 .inputGroup input:focus,
-.inputGroup textarea:focus {
-  border-color: #ffb800;
-}
+.inputGroup textarea:focus { border-color: #ffb800; }
 
 input::placeholder,
 textarea::placeholder {
@@ -158,47 +129,18 @@ textarea::placeholder {
   border: none;
   transition: transform 0.2s;
 }
+.contactButton:hover { transform: translateY(-2px); }
 
-.contactButton:hover {
-  transform: translateY(-2px);
+@media (max-width: 1024px) {
+  .container { gap: 60px; }
 }
 
 @media (max-width: 768px) {
-  .section {
-    /* min-height: 70vh; */
-    padding: 100px 20px;
-    width: 100%;
-    color: #fff;
-  }
-
-  .stats,
-  .contactDetails {
-    display: none;
-  }
-
-  .container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .description {
-    max-width: 100%;
-    min-height: unset;
-  }
-
-  .inputGroup textarea {
-    min-height: fit-content;
-  }
-
-  .form {
-    padding-top: 0;
-  }
-  .contactButton{
-    margin-top: 50px;
-  }
-}
-@media (max-width: 600px) {
-  .container {
-    text-align: center;
-  }
+  .section { padding: 80px 20px; }
+  .container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .stats, .contactDetails { display: none; }
+  .description { max-width: 100%; min-height: unset; }
+  .form { padding-top: 0; }
+  .inputGroup textarea { min-height: fit-content; }
+  .contactButton { margin-top: 50px; }
 }

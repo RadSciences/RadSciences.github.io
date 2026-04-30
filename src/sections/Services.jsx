@@ -61,8 +61,8 @@ export default function Services() {
       <div className={styles.container}>
 
         <div className={styles.header}>
-          <span className={styles.subtitle}>What we do</span>
-          <h2 className={styles.title}>Our Services</h2>
+          <span className="section-subtitle">What we do</span>
+          <h2 className="section-title">Our Services</h2>
         </div>
 
         <motion.div

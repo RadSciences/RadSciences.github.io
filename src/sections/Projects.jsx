@@ -59,8 +59,8 @@ export default function Projects() {
     <section id="projects" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.headerRow}>
-            <span className={styles.subtitle}>OUR WORKS</span>
-            <h4 className={styles.title}>Projects</h4>
+            <span className="section-subtitle">OUR WORKS</span>
+            <h4 className="section-title">Projects</h4>
         </div>
         <div className={styles.controls}>
           <button onClick={prevSlide} className={styles.navButton}>&larr;</button>

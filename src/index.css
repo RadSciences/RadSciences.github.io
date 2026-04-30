@@ -1,4 +1,4 @@
-/* src/styles/index.css */
+/* ─── Reset & Base ─────────────────────────────── */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -26,4 +26,28 @@ ul, ol {
 
 a {
   text-decoration: none;
+}
+/* ─── Common Section ────────────────────────────── */
+.section-border {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* ─── Common Typography ─────────────────────────── */
+.section-subtitle {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #818cf8;
+  margin-bottom: 16px;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.04em;
+  background: linear-gradient(90deg, #fff, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
