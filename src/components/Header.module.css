@@ -39,13 +39,13 @@
   align-items: center;
   justify-content: center;
   width: 70px;
-  height: 80px;
+  height: 90px;
   overflow: hidden;
   margin: 0 auto;
 }
 
 .logoImage {
-  height: 80px;
+  height: 100px;
   filter: drop-shadow(0 0 12px rgba(255, 184, 0, 0.2));
 }
 
@@ -145,8 +145,11 @@
 
   .imgContainer {
     height: auto;
+    width: 30px;
   }
-
+  .logoImage {
+    height: 70px;
+  }
   .navList {
     gap: 0.9rem;
   }
