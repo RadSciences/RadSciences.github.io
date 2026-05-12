@@ -17,6 +17,7 @@
   font-size: clamp(0.95rem, 2vw, 17px);
   color: #94a3b8;
   line-height: 1.6;
+  margin-top: 1.5rem;
   margin-bottom: 40px;
   max-width: 440px;
   min-height: 120px;

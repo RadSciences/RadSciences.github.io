@@ -54,7 +54,7 @@
   font-size: clamp(2rem, 7vw, 3.5rem);
   font-weight: 900;
   line-height: 1.15;
-  margin: 0;
+  margin-top: 3rem;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.584)) drop-shadow(0 0 20px rgba(15, 23, 42, 0.4));
   background: linear-gradient(to bottom, #ffffff 60%, rgba(255, 255, 255, 0.6));
   -webkit-background-clip: text;
@@ -188,9 +188,10 @@
 
   .copy {
     font-size: 1.8rem;
+    margin-top: 3rem;
   }
 
   .badgeStage {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 }

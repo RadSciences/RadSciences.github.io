@@ -190,13 +190,13 @@
 
 @media (max-width: 1024px) {
   .section { padding: 80px 20px; }
+  .mediaSide { width: 100%; flex: none; }
+  .layoutContainer { flex-direction: column; gap: 24px; margin-top: 24px; }
 }
 
 @media (max-width: 768px) {
   .layoutContainer { flex-direction: column; gap: 24px; margin-top: 24px; }
   .infoSide { position: static; gap: 14px; }
-  .mainImage, .mainVideo { width: 100%; }
-  .mainImage { height: 200px; }
   .mainImage > span { line-height: 200px; font-size: 0.7rem; }
   .badge { font-size: 9px; }
   .context { margin-bottom: 24px; }

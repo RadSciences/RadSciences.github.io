@@ -52,18 +52,18 @@
 
 .statValue {
   display: block;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
   font-weight: 800;
   color: #ffcd00;
 }
 
 .statLabel {
-  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  font-size: clamp(0.6rem, 1vw, 0.8rem);
   color: #666;
 }
 
 .slogan {
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
   line-height: 1.5;
   font-weight: 700;
   margin-bottom: 40px;

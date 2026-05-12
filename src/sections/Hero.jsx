@@ -5,10 +5,10 @@ import DnaVisual from '../components/DnaVisual';
 import styles from './Hero.module.css';
 
 const BADGES = [
-  { id: 1, text: 'Precision Analytics' },
-  { id: 2, text: 'Scalable Architecture' },
-  { id: 3, text: 'Pattern Recognition' },
-  { id: 4, text: 'Predictive Insights' },
+  { id: 1, text: 'Research Software Development' },
+  { id: 2, text: 'Topological Data Analysis' },
+  { id: 3, text: 'Deep Learning w/ Biomedical Data' },
+  // { id: 4, text: 'Predictive Insights' },
 ];
 
 export default function Hero() {
@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section className={styles.section}>
       <div className={styles.headerSection}>
-        <span className="section-title">INTELLIGENT BIO-DATA ENGINE</span>
+        <span className="section-title">Full-Scope Biomedical Research Partner</span>
         <h2 className={styles.copy}>{t('highlight.title')}</h2>
 
         <div className={styles.badgeStage}>
