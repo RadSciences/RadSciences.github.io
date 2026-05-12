@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-Pincode: tjdwnd809
 Sitemap: https://radscience.kr/sitemap.xml
+
+#DaumWebMasterTool:048d954df22967949675309a7b3ba7a837ff7e9774b98395e1e93a62d625ec6a:9QC48RIDoACLXH3FbFNbCg==
