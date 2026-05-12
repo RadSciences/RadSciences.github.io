@@ -44,7 +44,7 @@ a {
 }
 
 .section-title {
-  font-size: clamp(1.6rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-family: 'Poppins', sans-serif;
   letter-spacing: -0.04em;
   background: linear-gradient(90deg, #fff, #818cf8);
