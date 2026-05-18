@@ -23,7 +23,7 @@ export default function Contact() {
   useEffect(() => {
     if (isInView) {
       // Accuracy 카운트업 (0 -> 99)
-      animate(0, 99, {
+      animate(0, 100, {
         duration: 2.5,         // 시간을 약간 늘려 여유를 줌
         ease: [0.16, 1, 0.3, 1], // Custom Ease: 초반에 빠르고 끝에서 아주 부드럽게 (Power4 easeOut)
         onUpdate: (latest) => setAccuracy(Math.round(latest)),
@@ -88,7 +88,7 @@ export default function Contact() {
           <div className={styles.stats}>
             <div className={styles.statItem}>
               <span className={styles.statNum}>{accuracy} %</span>
-              <span className={styles.statLabel}>Accuracy</span>
+              <span className={styles.statLabel}>Delivery Success Rate</span>
             </div>
 
             <div className={styles.statItem}>
