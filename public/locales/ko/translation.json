@@ -6,13 +6,13 @@
     "contact": "문의"
   },
   "highlight": {
-    "title": "데이터 속 숨겨진\n패턴을 시각화합니다."
+    "title": "국내 유일 의료 연구 엑셀러레이터"
   },
   "company": {
     "title": "RAD SCIENCE",
     "slogan": "혁신적이고 신뢰할 수 있는\n글로벌 의료 연구 파트너",
-    "description": "래드 사이언스는 의료 및 행동 연구 현장의\n데이터 공백을 메우기 위해 설립된\nAI 데이터 분석 및 소프트웨어 솔루션 전문 기업입니다.",
-    "detail": "미국 아이오와 대학병원 및 위스콘신 대학병원 등\n세계적인 연구 기관과의 협업 경험을 바탕으로,\n연구자들이 복잡한 데이터 분석과 소프트웨어 개발의 부담에서 벗어나\n본질적인 연구 성과에 집중할 수 있도록 돕습니다.",
+    "description": "래드 사이언스는 의료 및 행동 연구 현장의\nSW 공급 공백을 메우기 위해 설립된\n데이터 분석 및 소프트웨어 솔루션 전문 기업입니다.",
+    "detail": "미국 아이오와 대학병원 및 위스콘신 대학병원 등\n세계적인 연구 기관과의 협업 경험을 바탕으로,\n연구자들이 데이터 분석과 소프트웨어 개발의 부담에서 벗어나\n연구 진에 집중할 수 있도록 돕습니다.",
     "stats": [
       {
         "label": "Experience",
@@ -20,17 +20,17 @@
       },
       {
         "label": "Global Partners",
-        "value": "UIHC & UW"
+        "value": "U Iowa & U Wisconsin"
       },
       {
         "label": "Core Tech",
-        "value": "TDA & DL"
+        "value": "Research Software Tools & Topological Data Analysis"
       }
     ],
     "features": [
       {
         "title": "Topological Data Analysis",
-        "desc": "위상 기하학 기반 딥러닝으로 고차원 바이오메디컬 데이터에서 유의미한 패턴을 추출합니다",
+        "desc": "데이터 위상 분석 및 딥러닝으로 고차원 바이오메디컬 데이터에서 유의미한 패턴을 추출합니다",
         "icon": {
           "viewBox": "-50 -50 100 100",
           "elements": [
@@ -106,7 +106,7 @@
       },
       {
         "title": "Computer Vision",
-        "desc": "미국 주요 병원과 협력하여 AI 기반 의료 영상 분석으로 임상 진단 정확도를 향상시킵니다",
+        "desc": "미국 주요 병원과 협력하여 연구 프로토콜 개선합니다",
         "icon": {
           "viewBox": "-50 -50 100 100",
           "elements": [
@@ -195,7 +195,7 @@
       },
       {
         "title": "Voice Pitch Visual Tracking",
-        "desc": "딥러닝 기반 음성 바이오마커 시각화로 언어 장애 및 음성 관련 임상 연구를 지원합니다",
+        "desc": "실시간 음성처리 및 시각화로 행동 음성 인지 연구를 지원합니다",
         "icon": {
           "viewBox": "-50 -45 100 90",
           "elements": [
@@ -265,7 +265,7 @@
       },
       {
         "title": "AI Research",
-        "desc": "의료 및 생명과학 분야의 미충족 과제 해결을 위한 최신 AI 연구를 수행합니다",
+        "desc": "의료 및 생명과학 과제 해결을 위한 최신 AI 연구를 수행합니다",
         "icon": {
           "viewBox": "-50 -50 100 100",
           "elements": [
@@ -421,7 +421,7 @@
             {
         "id": "gvpt",
         "title": "GVPT",
-        "description": "시각적 피치 추적을 위한 실시간 실험 플랫폼입니다. 정밀한 피치 감지와 동적 시각 타겟을 구현하여 통제된 행동 및 음성 실험을 지원합니다.",
+        "description": "시각적 발성 음정 추적을 위한 실시간 실험 플랫폼입니다. 정밀한 음정 감지와 동적 시각 타겟을 구현하여 통제된 행동 및 음성 실험을 지원합니다.",
         "affiliation": null,
         "context": "행동 및 음성 실험",
         "status": "live",
@@ -438,7 +438,7 @@
       {
         "id": "apt",
         "title": "APT",
-        "description": "피치 기반 실험을 위한 실시간 청각 피드백 시스템입니다. 정확한 피치 감지와 청각 타겟 안내를 제공하여 통제된 행동 연구를 지원합니다.",
+        "description": "발성 음정 측정 실험을 위한 실시간 청각 피드백 시스템입니다. 정확한 음정 감지와 청각 테스크를 제공하여 통제된 행동 연구를 지원합니다.",
         "affiliation": null,
         "context": "행동 연구",
         "status": "live",
@@ -471,7 +471,7 @@
       {
         "id": "3d-lipid-projection",
         "title": "3D Lipid Projection",
-        "description": "고차원 지질체학 데이터를 위한 연구 시각화 도구입니다. Isomap과 UMAP을 사용해 지질 및 피험자를 투영하여 전역적·국소적 매니폴드 구조를 파악하고, 하위 머신러닝 및 위상 분석을 위한 피처 선택을 지원합니다.",
+        "description": "고차원 지질체학 데이터를 위한 연구 시각화 도구입니다. Isomap과 UMAP을 사용해 지질 및 피험자를 투영하여 전역적·국소적 매니폴드 구조를 파악하고, 머신러닝 및 위상 분석을 위한 피처 선택을 지원합니다.",
         "affiliation": "매니토바 대학교",
         "context": "종양 연구 목적으로 개발",
         "status": "in_progress",
@@ -505,7 +505,7 @@
     ]
   },
   "contact": {
-    "description": "복잡한 생물학적 난제를 정밀한 데이터 사이언스로 해결합니다.\n분석 파트너십부터 기술 도입까지,\n당신의 프로젝트를 확장하세요.",
+    "description": "저희는 당신의 의생명공학 연구 프로젝트를\n데이터 수집부터 기술 통합까지\n지원하여 연구 프로젝트를 가속화할 수 있습니다.",
     "inputName": "작성자 이름",
     "inputEmail": "이메일 주소",
     "inputDescription": "문의 내용을 자유롭게 작성해주세요."

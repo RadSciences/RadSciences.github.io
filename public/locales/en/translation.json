@@ -6,12 +6,12 @@
     "contact": "Contact"
   },
   "highlight": {
-    "title": "Visualizing Hidden Patterns\nIn Your Data."
+    "title": "Biomedical Research Accelerator"
   },
   "company": {
     "title": "RAD SCIENCE",
     "slogan": "Innovative & Reliable Partner\nin Medical Research",
-    "description": "RAD SCIENCE is a specialized AI data analysis and software solution provider\nestablished to bridge the data gap in medical and behavioral research.",
+    "description": "RAD SCIENCE is a specialized data analysis and research software provider\nestablished to accelerate innovation in medical and behavioral research.",
     "detail": "Based on our experience collaborating with world-class institutions like the University of Iowa and University of Wisconsin,\nwe empower researchers to focus on their core scientific achievements by handling complex data challenges.",
     "stats": [
       {
@@ -20,17 +20,17 @@
       },
       {
         "label": "Global Partners",
-        "value": "UIHC & UW"
+        "value": "U Iowa & U Wisconsin"
       },
       {
         "label": "Core Tech",
-        "value": "TDA & DL"
+        "value": "Research Software Tools & Topological Data Analysis"
       }
     ],
     "features": [
       {
         "title": "Topological Data Analysis",
-        "desc": "Extracting meaningful patterns from high-dimensional biomedical data using topology-driven deep learning",
+        "desc": "Extracting meaningful patterns from high-dimensional biomedical data through topological data analysis and deep learning",
         "icon": {
           "viewBox": "-50 -50 100 100",
           "elements": [
@@ -106,7 +106,7 @@
       },
       {
         "title": "Computer Vision",
-        "desc": "Advancing clinical diagnostic accuracy through AI-powered medical image analysis in collaboration with leading U.S. hospitals",
+        "desc": "Advancing research protocols through collaboration with leading US hospitals",
         "icon": {
           "viewBox": "-50 -50 100 100",
           "elements": [
@@ -195,7 +195,7 @@
       },
       {
         "title": "Voice Pitch Visual Tracking",
-        "desc": "Supporting clinical research on speech disorders through deep learning-based vocal biomarker visualization",
+        "desc": "Supporting behavioral research on speech perception through real-time visual pitch tracking",
         "icon": {
           "viewBox": "-50 -45 100 90",
           "elements": [
@@ -422,7 +422,7 @@
         "id": "gvpt",
         "title": "GVPT",
         "description": "A real-time experimental platform for visual pitch tracking. Implements precise pitch detection with dynamic visual targets to support controlled behavioral and speech experiments.",
-        "affiliation": null,
+        "affiliation": "University of Iowa, Department of Neurosurgery",
         "context": "Behavioral and speech experiments",
         "status": "live",
         "link": "__Link__",
@@ -439,7 +439,7 @@
         "id": "apt",
         "title": "APT",
         "description": "A real-time auditory feedback system for pitch-based experiments. Provides accurate pitch detection with auditory target guidance for controlled behavioral studies.",
-        "affiliation": null,
+        "affiliation": "University of Iowa, Department of Neurosurgery",
         "context": "Behavioral studies",
         "status": "live",
         "link": "__Link__",
@@ -456,7 +456,7 @@
         "id": "uiowa-remote-voice",
         "title": "UIowa Remote Voice",
         "description": "A remote data collection platform for voice and survey-based medical studies. Enables participants to contribute high-quality recordings and metadata outside clinical settings, improving accessibility and scalability of research.",
-        "affiliation": "University of Iowa",
+        "affiliation": "University of Iowa, Department of Otolaryngology",
         "context": "Medical voice research",
         "status": "live",
         "link": "__Link__",
@@ -489,7 +489,7 @@
         "id": "3d-stack-image-annotator",
         "title": "3D Stack Image Annotator",
         "description": "A 3D-aware annotation tool for organoid imaging. Enables efficient labeling across image stacks while preserving spatial consistency within complex 3D structures. Designed to support deep learning pipelines for cancer organoid analysis.",
-        "affiliation": "University of Iowa",
+        "affiliation": "University of Iowa, Department of Cancer Biology",
         "context": "Cancer organoid analysis",
         "status": "in_progress",
         "link": null,
@@ -505,7 +505,7 @@
     ]
   },
   "contact": {
-    "description": "Solving complex biological challenges with precision data science.\nFrom analysis partnerships to technology integration,\nexpand your project with us.",
+    "description": "We can aid your biomedical research projects\nfrom data acquisition to technology integration,\naccelerate your research projects with us.",
     "inputName": "Your Name",
     "inputEmail": "Email Address",
     "inputDescription": "Please feel free to write your inquiry."
