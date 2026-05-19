@@ -6,13 +6,13 @@
     "contact": "Contact"
   },
   "highlight": {
-    "title": "End-to-End Biomedical Research Partner"
+    "title": "Reliable Biomedical Research Software Partner"
   },
   "company": {
     "title": "RAD SCIENCE",
-    "slogan": "Innovative & Reliable Partner\nin Medical Research",
-    "description": "RAD SCIENCE is a specialized data analysis and research software provider\nestablished to accelerate innovation in medical and behavioral research.",
-    "detail": "Based on our experience collaborating with world-class institutions like the University of Iowa and University of Wisconsin,\nwe empower researchers to focus on their core scientific achievements by handling complex data challenges.",
+    "slogan": "Innovative & Reliable Partner in \nMedical Research",
+    "description": "RAD SCIENCE is a specialized research software provider\nestablished to accelerate innovation in medical and behavioral research.",
+    "detail": "Based on our experience collaborating with world-class institutions like the University of Iowa and University of Wisconsin,\nwe empower researchers to focus on their core scientific achievements by handling technological challenges.",
     "stats": [
       {
         "label": "Experience",
@@ -20,11 +20,11 @@
       },
       {
         "label": "Global Partners",
-        "value": "U Iowa & U Wisconsin"
+        "value": "U. Iowa & U. Wisconsin"
       },
       {
         "label": "Core Tech",
-        "value": "Research Software Tools & Topological Data Analysis"
+        "value": "Research Software Tools"
       }
     ],
     "features": [
@@ -106,7 +106,7 @@
       },
       {
         "title": "Computer Vision",
-        "desc": "Advancing research protocols through collaboration with leading US hospitals",
+        "desc": "Specialized medical imaging projects for image segmentation and object detection in complex biomedical contexts",
         "icon": {
           "viewBox": "-50 -50 100 100",
           "elements": [
@@ -153,7 +153,7 @@
       },
       {
         "title": "Multivariate Time Series Event Detection",
-        "desc": "Real-time detection of clinically critical events from multi-channel biosignal data including EEG and ECG",
+        "desc": "Real-time detection of clinically significant events from multi-channel time series data.",
         "icon": {
           "viewBox": "-50 -55 100 110",
           "elements": [
@@ -212,7 +212,7 @@
       },
       {
         "title": "Mobile/Desktop Application",
-        "desc": "Developing research-grade applications optimized for clinical data collection and laboratory workflows",
+        "desc": "Developing research applications optimized for data acquisition and laboratory workflows",
         "icon": {
           "viewBox": "-50 -50 100 100",
           "elements": [
@@ -382,7 +382,7 @@
       },
       {
         "title": "Technical Support",
-        "desc": "Providing dedicated technical assistance and custom software solutions tailored to laboratory and clinical research needs",
+        "desc": "Providing dedicated technical assistance and custom software solutions tailored to the laboratory and clinical research needs",
         "icon": {
           "viewBox": "-50 -50 100 100",
           "elements": [
@@ -431,8 +431,8 @@
         "tags": [
           "pitch tracking",
           "real-time",
-          "speech",
-          "experiment"
+          "speech perception",
+          "behavioral experiment"
         ]
       },
       {
@@ -449,7 +449,8 @@
           "auditory feedback",
           "pitch detection",
           "real-time",
-          "experiment"
+          "speech perception",
+          "behavioral experiment"
         ]
       },
             {
