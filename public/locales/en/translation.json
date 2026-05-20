@@ -507,7 +507,7 @@
     ]
   },
   "contact": {
-    "description": "We can aid your biomedical research projects\nfrom data acquisition to technology integration,\naccelerate your research projects with us.",
+    "description": "We can aid your research projects\nfrom data acquisition to technology integration,\naccelerate your research projects with us.",
     "inputName": "Your Name",
     "inputEmail": "Email Address",
     "inputDescription": "Please feel free to write your inquiry."
