@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 const ROTATION_STRENGTH = 0.0005;
 const CLUSTER_COLORS = ['#FBBF24', '#00F2FF', '#2DD4BF', '#7000FF'];
 // const LABELS = ['Cluster_α', 'Cluster_β', 'Cluster_γ', 'Cluster_δ'];
-const LABELS = ['Phenotype_Alpha', 'Exonic Sequence_δ', 'Kinetic Pathway', 'Structural Variant_γ'];
+const LABELS = ['lipidomics', 'audiovisual perception', 'cancer organoid', 'aging disorder'];
 
 const makeRng = (seed) => {
   let s = seed;
