@@ -26,6 +26,23 @@ ul, ol {
 a {
   text-decoration: none;
 }
+/* ─── Scroll Offset (fixed header compensation) ──── */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  section[id] {
+    scroll-margin-top: 52px;
+  }
+}
+
 /* ─── Common Section ────────────────────────────── */
 .section-border {
   border-top: 1px solid rgba(255, 255, 255, 0.05);

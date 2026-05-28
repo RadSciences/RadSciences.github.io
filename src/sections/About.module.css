@@ -4,7 +4,6 @@
   min-height: 100vh;
   color: #ffffff;
   display: flex;
-  align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -13,7 +12,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  /* padding: 0 24px; */
 }
 
 /* ─── Section Header ────────────────────────────── */
@@ -110,7 +109,7 @@
 /* ─── Responsive ────────────────────────────────── */
 @media (max-width: 1024px) {
   .section {
-    padding: 80px 0;
+    padding: 100px 20px;
   }
 
   .mainGrid {
@@ -120,7 +119,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     align-items: flex-start;
   }
 
@@ -145,7 +144,7 @@
 
 @media (max-width: 480px) {
   .section {
-    padding: 48px 16px;
+    padding: 60px 16px;
   }
 
   .slogan {
