@@ -17,7 +17,7 @@ export default function Projects() {
   // 1. 브라우저 너비에 따라 보여줄 카드 개수 동적 계산
   useEffect(() => {
     const updateItemsPerView = () => {
-      if (window.innerWidth <= 600) setItemsPerView(1);
+      if (window.innerWidth <= 768) setItemsPerView(1);
       else if (window.innerWidth <= 1024) setItemsPerView(2);
       else setItemsPerView(3);
     };
@@ -58,9 +58,9 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.headerRow}>
-            <span className="section-subtitle">OUR WORKS</span>
-            <h4 className="section-title">Projects</h4>
+        <div className={styles.sectionHeader}>
+          <span className="section-subtitle">OUR WORKS</span>
+          <h4 className="section-title">Projects</h4>
         </div>
         <div className={styles.controls}>
           <button onClick={prevSlide} className={styles.navButton}>&larr;</button>

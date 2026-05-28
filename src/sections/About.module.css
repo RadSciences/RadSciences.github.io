@@ -1,3 +1,4 @@
+/* ─── Section Shell ─────────────────────────────── */
 .section {
   padding: 100px 0;
   min-height: 100vh;
@@ -7,23 +8,41 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* ─── Container ─────────────────────────────────── */
 .container {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.header {
+/* ─── Section Header ────────────────────────────── */
+.sectionHeader {
   margin-bottom: 50px;
 }
 
+/* ─── Main Grid ─────────────────────────────────── */
 .mainGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 80px;
   align-items: start;
 }
 
+.visualSide {
+  min-width: 0;
+}
+
+.textSide {
+  min-width: 0;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Image ─────────────────────────────────────── */
 .imgContainer {
   width: 100%;
   background: #0f0f0f;
@@ -36,6 +55,7 @@
   display: block;
 }
 
+/* ─── Stats ─────────────────────────────────────── */
 .statsContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -48,7 +68,10 @@
   text-align: center;
   border-right: 1px solid rgba(255, 255, 255, 0.262);
 }
-.statItem:last-child { border-right: none; }
+
+.statItem:last-child {
+  border-right: none;
+}
 
 .statValue {
   display: block;
@@ -62,6 +85,7 @@
   color: #666;
 }
 
+/* ─── Text Content ──────────────────────────────── */
 .slogan {
   font-size: clamp(1.2rem, 3vw, 1.7rem);
   line-height: 1.5;
@@ -75,20 +99,56 @@
   line-height: 1.6;
   color: #ccc;
   margin-bottom: 12px;
-  white-space: wrap;
 }
 
 .detail {
   font-size: clamp(0.875rem, 1.5vw, 1rem);
   line-height: 1.6;
   color: #777;
-  white-space: wrap;
+}
+
+/* ─── Responsive ────────────────────────────────── */
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .mainGrid {
+    gap: 48px;
+  }
 }
 
 @media (max-width: 768px) {
-  .section { padding: 60px 20px; }
-  .container { width: 100%; }
-  .header { text-align: center; margin-bottom: 30px; }
-  .mainGrid { grid-template-columns: 1fr; gap: 30px; }
-  .statsContainer { margin-top: 10px; }
+  .section {
+    padding: 60px 20px;
+    align-items: flex-start;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .statsContainer {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 48px 16px;
+  }
+
+  .slogan {
+    margin-bottom: 24px;
+  }
 }

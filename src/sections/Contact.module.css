@@ -1,3 +1,4 @@
+/* ─── Section Shell ─────────────────────────────── */
 .section {
   min-height: 90vh;
   padding: 100px 20px 80px;
@@ -5,6 +6,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* ─── Container ─────────────────────────────────── */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -13,6 +15,18 @@
   gap: 100px;
 }
 
+/* ─── Info Area (left column) ───────────────────── */
+.infoArea {
+  min-width: 0;
+}
+
+/* ─── Title Highlight ───────────────────────────── */
+.highlight {
+  color: #38bdf8;
+  -webkit-text-fill-color: #38bdf8;
+}
+
+/* ─── Description ───────────────────────────────── */
 .description {
   font-size: clamp(0.8rem, 2vw, 17px);
   color: #94a3b8;
@@ -21,9 +35,9 @@
   margin-bottom: 40px;
   max-width: 440px;
   min-height: 120px;
-  white-space: wrap;
 }
 
+/* ─── Stats ─────────────────────────────────────── */
 .stats {
   display: flex;
   gap: 60px;
@@ -61,7 +75,11 @@
   letter-spacing: -0.5px;
   text-shadow: 0 0 12px rgba(0, 242, 255, 0.4);
 }
-
+.statDigit {
+  display: inline-block;
+  min-width: 2ch;
+  text-align: right;
+}
 .statLabel {
   font-size: clamp(10px, 1.2vw, 12px);
   color: #94a3b8;
@@ -70,9 +88,11 @@
   font-weight: 500;
 }
 
+/* ─── Contact Details ───────────────────────────── */
 .contactDetails {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .detailLink small {
@@ -88,8 +108,10 @@
   color: #e2e8f0;
 }
 
+/* ─── Form ──────────────────────────────────────── */
 .form {
   padding-top: 100px;
+  min-width: 0;
 }
 
 .inputGroup input,
@@ -106,10 +128,15 @@
   font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
-.inputGroup textarea { min-height: 240px; }
+.inputGroup textarea {
+  min-height: 240px;
+  resize: vertical;
+}
 
 .inputGroup input:focus,
-.inputGroup textarea:focus { border-color: #ffb800; }
+.inputGroup textarea:focus {
+  border-color: #ffb800;
+}
 
 input::placeholder,
 textarea::placeholder {
@@ -129,22 +156,57 @@ textarea::placeholder {
   line-height: 1;
   cursor: pointer;
   border: none;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.contactButton:hover { transform: translateY(-2px); }
 
+.contactButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 184, 0, 0.3);
+}
+
+/* ─── Responsive ────────────────────────────────── */
 @media (max-width: 1024px) {
-  .container { gap: 60px; }
+  .container {
+    gap: 60px;
+  }
 }
 
 @media (max-width: 768px) {
-  .section { padding: 80px 20px; }
+  .section {
+    padding: 80px 20px 60px;
+    min-height: unset;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .description {
+    max-width: 100%;
+    min-height: unset;
+  }
+
+  .form {
+    padding-top: 0;
+  }
+
+  .inputGroup textarea {
+    min-height: 180px;
+  }
 }
+
 @media (max-width: 480px) {
-  .section { padding: 80px 20px; }
-  .container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-  .description, .stats, .contactDetails { display: none; }
-  .form { padding-top: 0; }
-  .inputGroup textarea { min-height: fit-content; }
-  .contactButton { margin-top: 50px; }
+  .section {
+    padding: 60px 16px 48px;
+  }
+
+  .stats {
+    gap: 32px;
+  }
+
+  .contactDetails {
+    flex-direction: column;
+    gap: 16px;
+  }
 }

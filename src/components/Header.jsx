@@ -2,7 +2,7 @@ import logo from '../assets/images/logo/logo_only.png';
 import { useLanguage } from '../hooks/useLanguage';
 import { useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import styles from './Header.module.css';
 
 export default function Header() {

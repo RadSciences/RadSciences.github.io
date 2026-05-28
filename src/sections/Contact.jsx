@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
-import { motion, useInView, animate } from 'framer-motion';
+import { useInView, animate } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import styles from './Contact.module.css';
 
@@ -21,21 +21,47 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
-    if (isInView) {
-      // Accuracy 카운트업 (0 -> 99)
-      animate(0, 100, {
-        duration: 2.5,         // 시간을 약간 늘려 여유를 줌
-        ease: [0.16, 1, 0.3, 1], // Custom Ease: 초반에 빠르고 끝에서 아주 부드럽게 (Power4 easeOut)
-        onUpdate: (latest) => setAccuracy(Math.round(latest)),
-      });
+    if (!isInView) return;
 
-      // Response 카운트업 (0 -> 24)
-      animate(0, 24, {
-        duration: 1.8,         // 타겟 숫자가 작으므로 조금 더 빠르게 완료
-        ease: [0.16, 1, 0.3, 1],
-        onUpdate: (latest) => setResponse(Math.round(latest)),
-      });
-    }
+    let stopped = false;
+
+    const runCycle = () => {
+      if (stopped) return;
+
+      // 리셋
+      setAccuracy(0);
+      setResponse(0);
+
+      // 약간 딜레이 후 카운트업 시작
+      const delay = setTimeout(() => {
+        if (stopped) return;
+
+        animate(0, 100, {
+          duration: 2.5,
+          ease: [0.16, 1, 0.3, 1],
+          onUpdate: (latest) => setAccuracy(Math.round(latest)),
+        });
+
+        animate(0, 24, {
+          duration: 1.8,
+          ease: [0.16, 1, 0.3, 1],
+          onUpdate: (latest) => setResponse(Math.round(latest)),
+          onComplete: () => {
+            // 가장 긴 애니메이션(2.5s)이 끝나고 잠시 대기 후 재시작
+            const pause = setTimeout(runCycle, 2000); // 1.5초 유지 후 반복
+            return () => clearTimeout(pause);
+          },
+        });
+      }, 200); // 리셋 후 0.2초 대기
+
+      return () => clearTimeout(delay);
+    };
+
+    runCycle();
+
+    return () => {
+      stopped = true;
+    };
   }, [isInView]);
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -85,22 +111,24 @@ export default function Contact() {
           </h2>
           <p className={styles.description}>{t('contact.description')}</p>
 
-          <div className={styles.stats}>
-            <div className={styles.statItem}>
-              <span className={styles.statNum}>{accuracy} %</span>
-              <span className={styles.statLabel}>Delivery Success Rate</span>
-            </div>
+          <div className={styles.statItem}>
+            <span className={styles.statNum}>
+              <span className={styles.statDigit}>{accuracy}</span> %
+            </span>
+            <span className={styles.statLabel}>Delivery Success Rate</span>
+          </div>
 
-            <div className={styles.statItem}>
-              <span className={styles.statNum}>{response} h</span>
-              <span className={styles.statLabel}>Response</span>
-            </div>
+          <div className={styles.statItem}>
+            <span className={styles.statNum}>
+              <span className={styles.statDigit}>{response}</span> h
+            </span>
+            <span className={styles.statLabel}>Response</span>
           </div>
 
           <div className={styles.contactDetails}>
             <div className={styles.detailLink}>
               <small>Email Inquiry</small>
-              <p>              
+              <p>
                 contact@radscience.kr
               </p>
             </div>

@@ -1,25 +1,30 @@
+/* ─── Section Shell ─────────────────────────────── */
 .section {
   padding: 120px 20px;
   min-height: 100vh;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* ─── Container ─────────────────────────────────── */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0 40px;
 }
 
-.header {
+/* ─── Section Header ────────────────────────────── */
+.sectionHeader {
   margin-bottom: 80px;
 }
 
+/* ─── Grid ──────────────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
 
+/* ─── Card ──────────────────────────────────────── */
 .card {
   background-color: #1e1e1e90;
   padding: 20px;
@@ -46,9 +51,16 @@
   transition: transform 0.4s ease;
 }
 
-.card:hover::after { transform: scaleX(1); }
-.card:hover { border-color: rgb(133, 133, 133); }
+.card:hover::after {
+  transform: scaleX(1);
+}
 
+.card:hover {
+  border-color: rgb(133, 133, 133);
+  background-color: #2a2a2a90;
+}
+
+/* ─── Card Contents ─────────────────────────────── */
 .iconWrap {
   width: 60px;
   height: 60px;
@@ -66,6 +78,7 @@
 .cardBody {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .cardTitle {
@@ -85,15 +98,53 @@
   margin-top: 5px;
 }
 
+/* ─── Responsive ────────────────────────────────── */
 @media (max-width: 1024px) {
-  .section { padding: 100px 20px; }
-  .grid { grid-template-columns: repeat(2, 1fr); }
-  .cardDesc { display: none; }
-  .cardTitle { min-height: unset; }
+  .section {
+    padding: 100px 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cardDesc {
+    display: none;
+  }
+
+  .cardTitle {
+    min-height: unset;
+  }
 }
 
 @media (max-width: 768px) {
-  .grid { grid-template-columns: 1fr; }
-  .header { text-align: center; }
-  .cardDesc { display: none; }
+  .section {
+    padding: 80px 20px;
+  }
+
+  .sectionHeader {
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cardDesc {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+  }
 }

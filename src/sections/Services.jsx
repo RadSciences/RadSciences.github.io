@@ -1,5 +1,5 @@
 import { useLanguage } from '../hooks/useLanguage';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import styles from './Services.module.css';
 
 const iconStroke = {
@@ -11,7 +11,6 @@ const iconStroke = {
 };
 
 function renderElement(el, i) {
-  const isLine = ['line', 'polyline', 'path', 'ellipse'].includes(el.type);
   const strokeProps = el.filled ? {} : iconStroke;
   const fillVal = el.filled ? 'currentColor' : 'none';
 
@@ -60,7 +59,7 @@ export default function Services() {
     <section id="services" className={styles.section}>
       <div className={styles.container}>
 
-        <div className={styles.header}>
+        <div className={styles.sectionHeader}>
           <span className="section-subtitle">What we do</span>
           <h2 className="section-title">Our Services</h2>
         </div>

@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 
 function ScrollToTop() {
   const location = useLocation();
-  const { pathname } = useLocation();
   useEffect(() => {
     if (location.state?.scrollTo) {
       const el = document.getElementById(location.state.scrollTo);
@@ -19,8 +18,7 @@ function ScrollToTop() {
     } else {
       window.scrollTo(0, 0);
     }
-
-  }, [pathname, location.state]);
+  }, [location.pathname, location.state]);
   return null;
 }
 
