@@ -1,7 +1,7 @@
 /* ─── Section Shell ─────────────────────────────── */
 .section {
   margin: 0 auto;
-  padding: 80px 20px;
+  /* padding: 80px 20px; */
   color: #ffffff;
   min-height: 100vh;
   max-width: 1280px;
@@ -10,6 +10,7 @@
 
 /* ─── Back Button ───────────────────────────────── */
 .backButton {
+  margin-top: 180px;
   background: none;
   border: none;
   color: #555;
@@ -28,7 +29,7 @@
 }
 
 .backButton::before {
-  content: '←';
+  content: '⟵';
   font-size: 14px;
   transition: transform 0.2s ease;
 }
