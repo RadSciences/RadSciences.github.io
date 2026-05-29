@@ -104,11 +104,14 @@ export default function Contact() {
     <section id="contact" className={styles.section} ref={ref}>
       <div className={styles.container}>
         <div className={styles.infoArea}>
-          <div className="section-subtitle">CONTACT US</div>
-          <h2 className="section-title">
-            Let's decode <br />
-            <span className={styles.highlight}>your data together.</span>
-          </h2>
+          <div className={styles.sectionHeader}>
+            <div className="section-subtitle">CONTACT US</div>
+            <h2 className="section-title">
+              Let's decode <br />
+              <span className={styles.highlight}>your data together.</span>
+            </h2>
+          </div>
+
           <p className={styles.description}>{t('contact.description')}</p>
 
           <div className={styles.statItem}>

@@ -176,6 +176,9 @@ textarea::placeholder {
     padding: 80px 20px 60px;
     min-height: unset;
   }
+  .sectionHeader {
+    text-align: center;
+  }
 
   .container {
     grid-template-columns: 1fr;
