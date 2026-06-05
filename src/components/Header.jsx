@@ -2,7 +2,7 @@ import logo from '../assets/images/logo/logo_only.png';
 import { useLanguage } from '../hooks/useLanguage';
 import { useMemo, useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion'; // eslint-disable-line no-unused-vars
+import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import styles from './Header.module.css';
 
@@ -134,28 +134,18 @@ export default function Header() {
       </nav>
 
       {/* 모바일 드롭다운 메뉴 */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className={styles.mobileMenu}
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
+      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
+        {navItems.map((item) => (
+          <a
+            key={item.name}
+            href={item.href}
+            onClick={(e) => handleNavClick(e, item.href)}
+            className={styles.mobileNavLink}
           >
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={styles.mobileNavLink}
-              >
-                {item.name}
-              </a>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {item.name}
+          </a>
+        ))}
+      </div>
     </motion.header>
   );
 }

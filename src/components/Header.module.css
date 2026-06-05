@@ -156,7 +156,15 @@
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.97);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.25rem 0 0.75rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.28s ease-in-out, opacity 0.28s ease-in-out;
+}
+
+.mobileMenuOpen {
+  max-height: 300px;
+  opacity: 1;
 }
 
 .mobileNavLink {
