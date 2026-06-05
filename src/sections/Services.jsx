@@ -1,5 +1,6 @@
 import { useLanguage } from '../hooks/useLanguage';
-import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
+import { motion } from 'framer-motion';
+import { headerContainer, titleReveal, viewportOpts } from '../utils/motion';
 import styles from './Services.module.css';
 
 const iconStroke = {
@@ -59,10 +60,20 @@ export default function Services() {
     <section id="services" className={styles.section}>
       <div className={styles.container}>
 
-        <div className={styles.sectionHeader}>
-          <span className="section-subtitle">What we do</span>
-          <h2 className="section-title">Our Services</h2>
-        </div>
+        <motion.div
+          className={styles.sectionHeader}
+          variants={headerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOpts}
+        >
+          <span className="section-subtitle">{t('sections.services.subtitle')}</span>
+          <div style={{ overflow: 'hidden' }}>
+            <motion.h2 className="section-title" variants={titleReveal}>
+              {t('sections.services.title')}
+            </motion.h2>
+          </div>
+        </motion.div>
 
         <motion.div
           className={styles.grid}

@@ -1,7 +1,14 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
+import { ease } from '../utils/motion';
 import styles from './ProjectDetail.module.css';
+
+const item = (delay = 0) => ({
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.75, delay, ease } },
+});
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -39,22 +46,44 @@ export default function ProjectDetail() {
 
   return (
     <article className={styles.section}>
-      <button onClick={() => navigate('/', { state: { scrollTo: 'projects' } })} className={styles.backButton}>
+      <motion.button
+        onClick={() => navigate('/', { state: { scrollTo: 'projects' } })}
+        className={styles.backButton}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease }}
+      >
         {backLabel}
-      </button>
+      </motion.button>
 
-      <div className={styles.header}>
-        <span className={`${styles.badge} ${styles[project.status]}`}>
+      <motion.div
+        className={styles.header}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.span
+          className={`${styles.badge} ${styles[project.status]}`}
+          variants={item(0.05)}
+        >
           {project.status === 'live' ? 'Live' : 'In Progress'}
-        </span>
-        <h1 className="section-title">{project.title}</h1>
-      </div>
+        </motion.span>
+        <div style={{ overflow: 'hidden' }}>
+          <motion.h1
+            className="section-title"
+            variants={item(0.12)}
+          >
+            {project.title}
+          </motion.h1>
+        </div>
+      </motion.div>
 
-      {/* 미디어와 정보를 감싸는 컨테이너 */}
       <div className={styles.layoutContainer}>
-
-        {/* 왼쪽: 비주얼 영역 */}
-        <div className={styles.mediaSide}>
+        <motion.div
+          className={styles.mediaSide}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.85, delay: 0.2, ease }}
+        >
           {project.demo ? (
             <video
               className={styles.mainVideo}
@@ -69,10 +98,14 @@ export default function ProjectDetail() {
               </span>
             </div>
           )}
-        </div>
+        </motion.div>
 
-        {/* 오른쪽: 텍스트 정보 영역 */}
-        <div className={styles.infoSide}>
+        <motion.div
+          className={styles.infoSide}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.85, delay: 0.3, ease }}
+        >
           {project.affiliation && <p className={styles.affiliation}>{project.affiliation}</p>}
           {project.context && <p className={styles.context}>{project.context}</p>}
 
@@ -91,7 +124,7 @@ export default function ProjectDetail() {
               {project.linkLabel || visitLabel} →
             </a>
           )}
-        </div>
+        </motion.div>
       </div>
     </article>
   );

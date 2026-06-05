@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
-import { useInView, animate } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { slideLeft, slideRight, headerContainer, titleReveal, viewportOpts } from '../utils/motion';
 import styles from './Contact.module.css';
 
 const EMAILJS_PUBLIC_KEY = 'jNX9WemJdiGCJieCc';
@@ -103,14 +104,25 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.section} ref={ref}>
       <div className={styles.container}>
-        <div className={styles.infoArea}>
-          <div className={styles.sectionHeader}>
-            <div className="section-subtitle">CONTACT US</div>
-            <h2 className="section-title">
-              Let's decode <br />
-              <span className={styles.highlight}>your data together.</span>
-            </h2>
-          </div>
+        <motion.div
+          className={styles.infoArea}
+          variants={slideLeft}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOpts}
+        >
+          <motion.div
+            className={styles.sectionHeader}
+            variants={headerContainer}
+          >
+            <span className="section-subtitle">{t('sections.contact.subtitle')}</span>
+            <div style={{ overflow: 'hidden' }}>
+              <motion.h2 className="section-title" variants={titleReveal}>
+                {t('sections.contact.titleLine1')} <br />
+                <span className={styles.highlight}>{t('sections.contact.titleLine2')}</span>
+              </motion.h2>
+            </div>
+          </motion.div>
 
           <p className={styles.description}>{t('contact.description')}</p>
 
@@ -140,9 +152,16 @@ export default function Contact() {
               <p>SEOUL, KOREA</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <motion.form
+          className={styles.form}
+          onSubmit={handleSubmit}
+          variants={slideRight}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOpts}
+        >
           <div className={styles.inputGroup}>
             <input
               type="text"
@@ -175,7 +194,7 @@ export default function Contact() {
               ? (isKo ? '전송 중...' : 'Sending...')
               : (isKo ? '메시지 보내기' : 'Send Message')}
           </button>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

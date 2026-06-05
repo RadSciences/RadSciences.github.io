@@ -6,6 +6,7 @@ import About from './sections/About';
 import Services from './sections/Services';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+// import Testimonials from './sections/Testimonials';
 import ProjectDetail from './sections/ProjectDetail';
 import Footer from './components/Footer';
 
@@ -31,6 +32,7 @@ function MainPage() {
       <About id="about" />
       <Services id="services" />
       <Projects id="projects" />
+      {/* <Testimonials /> */}
       <Contact id="contact" />
     </main>
   );

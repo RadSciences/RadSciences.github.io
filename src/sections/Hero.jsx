@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
 import ScatterVisual from '../components/ScatterVisual';
 import DnaVisual from '../components/DnaVisual';
 import styles from './Hero.module.css';
+
+const ease = [0.16, 1, 0.3, 1];
+
+const heroItem = (delay = 0) => ({
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, delay, ease } },
+});
 
 const BADGES = [
   { id: 1, text: 'Research Software Development' },
@@ -30,11 +38,25 @@ export default function Hero() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.headerSection}>
-        <span className={styles.title}>Full-Scope Biomedical Research Partner</span>
-        <h2 className={styles.copy}>{t('highlight.title')}</h2>
+      <motion.div
+        className={styles.headerSection}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.span className={styles.title} variants={heroItem(0)}>
+          Full-Scope Biomedical Research Partner
+        </motion.span>
 
-        <div className={styles.badgeStage}>
+        <div style={{ overflow: 'hidden' }}>
+          <motion.h2
+            className={styles.copy}
+            variants={heroItem(0.1)}
+          >
+            {t('highlight.title')}
+          </motion.h2>
+        </div>
+
+        <motion.div className={styles.badgeStage} variants={heroItem(0.25)}>
           <div className={styles.badgeWrapper}>
             {BADGES.map((badge, index) => (
               <span key={badge.id} className={`${styles.badge} ${getBadgeClass(index)}`}>
@@ -42,17 +64,22 @@ export default function Hero() {
               </span>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className={styles.visualContainer}>
+      <motion.div
+        className={styles.visualContainer}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.1, delay: 0.4, ease }}
+      >
         <div className={`${styles.visualCard} ${styles.dnaWrapper}`}>
           <DnaVisual />
         </div>
         <div className={`${styles.visualCard} ${styles.graphWrapper}`}>
           <ScatterVisual />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

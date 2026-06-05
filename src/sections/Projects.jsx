@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../hooks/useLanguage';
+import { headerContainer, titleReveal, viewportOpts } from '../utils/motion';
 import styles from './Projects.module.css';
 
 export default function Projects() {
@@ -58,15 +60,39 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
-          <span className="section-subtitle">OUR WORKS</span>
-          <h4 className="section-title">Projects</h4>
-        </div>
-        <div className={styles.controls}>
+        <motion.div
+          className={styles.sectionHeader}
+          variants={headerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOpts}
+        >
+          <span className="section-subtitle">{t('sections.projects.subtitle')}</span>
+          <div style={{ overflow: 'hidden' }}>
+            <motion.h2 className="section-title" variants={titleReveal}>
+              {t('sections.projects.title')}
+            </motion.h2>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className={styles.controls}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOpts}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
           <button onClick={prevSlide} className={styles.navButton}>&larr;</button>
           <button onClick={nextSlide} className={styles.navButton}>&rarr;</button>
-        </div>
-        <div className={styles.sliderWindow}>
+        </motion.div>
+
+        <motion.div
+          className={styles.sliderWindow}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOpts}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+        >
           <div
             className={styles.grid}
             style={{
@@ -104,7 +130,7 @@ export default function Projects() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

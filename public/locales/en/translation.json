@@ -3,6 +3,7 @@
     "services": "Services",
     "projects": "Projects",
     "about": "About",
+    "testimonials": "Testimonials",
     "contact": "Contact"
   },
   "highlight": {
@@ -504,10 +505,54 @@
       }
     ]
   },
+  "sections": {
+    "about":    { "subtitle": "About us",    "title": "Rad Science" },
+    "services": { "subtitle": "What we do",  "title": "Our Services" },
+    "projects": { "subtitle": "Our Works",   "title": "Projects" },
+    "contact":  {
+      "subtitle": "Contact Us",
+      "titleLine1": "Let's decode",
+      "titleLine2": "your data together."
+    }
+  },
   "contact": {
     "description": "Solving complex biological challenges with precision data science.\nFrom analysis partnerships to technology integration,\nexpand your project with us.",
     "inputName": "Your Name",
     "inputEmail": "Email Address",
     "inputDescription": "Please feel free to write your inquiry."
+  },
+  "testimonials": {
+    "subtitle": "WHAT CLIENTS SAY",
+    "sectionTitle": "Client Testimonials",
+    "items": [
+      {
+        "quote": "Rad Science built our real-time pitch tracking platform from the ground up. Their deep understanding of speech science combined with strong engineering execution made the entire collaboration seamless. The software has been running reliably in live experiments ever since.",
+        "name": "Dr. Ava Richardson",
+        "title": "Associate Professor of Communication Sciences",
+        "institution": "University of Iowa",
+        "photo": "/images/testimonials/jaykim.png"
+      },
+      {
+        "quote": "Their topological data analysis pipeline helped us uncover structure in our EEG datasets that conventional statistical methods had completely missed. The team communicated clearly at every stage and delivered exactly what we needed.",
+        "name": "Prof. David Nguyen",
+        "title": "Research Director, Computational Neuroscience",
+        "institution": "University of Wisconsin–Madison",
+        "photo": "/images/testimonials/jaykim.png"
+      },
+      {
+        "quote": "The 3D lipid projection tool gave our team an entirely new lens for exploring high-dimensional lipidomics data. It's now a core part of our research workflow. Rad Science's scientific intuition and engineering quality are both first-rate.",
+        "name": "Dr. Mia Thompson",
+        "title": "Department of Oncology",
+        "institution": "University of Manitoba",
+        "photo": "/images/testimonials/jaypsy.jfif"
+      },
+      {
+        "quote": "The remote voice data collection platform dramatically expanded our research reach. Participants could contribute high-quality recordings from anywhere, and the system handled everything smoothly behind the scenes. A truly well-engineered solution.",
+        "name": "Dr. James Park",
+        "title": "Clinical Researcher, Voice Medicine",
+        "institution": "Seoul National University Hospital",
+        "photo": "/images/testimonials/jaypsy.jfif"
+      }
+    ]
   }
 }

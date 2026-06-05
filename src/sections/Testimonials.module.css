@@ -1,0 +1,174 @@
+/* ─── Section Shell ─────────────────────────────── */
+.section {
+  height: 95vh;
+  padding: clamp(60px, 8vh, 100px) 20px clamp(60px, 8vh, 100px);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+/* ─── Container ─────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ─── Section Header ─────────────────────────────── */
+.sectionHeader {
+  flex-shrink: 0;
+  margin-bottom: clamp(20px, 3vh, 48px);
+}
+
+/* ─── Grid ───────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(12px, 1.8vh, 24px);
+  flex: 1;
+  min-height: 0;
+}
+
+/* ─── Card ───────────────────────────────────────── */
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #818cf8;
+  border-radius: 12px;
+  padding: clamp(18px, 2.5vh, 28px) clamp(20px, 2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vh, 14px);
+  min-height: 0;
+  overflow: hidden;
+  transition: background 0.3s, border-left-color 0.3s;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.055);
+  border-left-color: #ffb800;
+}
+
+/* ─── Quote Icon ─────────────────────────────────── */
+.quoteIcon {
+  font-size: clamp(2rem, 3.5vh, 3.5rem);
+  line-height: 1;
+  color: #818cf8;
+  opacity: 0.35;
+  font-family: 'Georgia', serif;
+  display: block;
+  flex-shrink: 0;
+  margin-bottom: clamp(-8px, -1vh, -4px);
+}
+
+/* ─── Quote Text ─────────────────────────────────── */
+.quote {
+  font-size: clamp(0.78rem, 1.3vh, 0.95rem);
+  color: #cbd5e1;
+  line-height: 1.75;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ─── Author ─────────────────────────────────────── */
+.author {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  padding-top: clamp(12px, 1.5vh, 20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  flex-shrink: 0;
+}
+
+/* ─── Photo ──────────────────────────────────────── */
+.photo {
+  width: clamp(40px, 5vh, 52px);
+  height: clamp(40px, 5vh, 52px);
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(129, 140, 248, 0.3);
+  background: #1a2744;
+  transition: border-color 0.3s;
+}
+
+.card:hover .photo {
+  border-color: rgba(255, 184, 0, 0.4);
+}
+
+/* ─── Author Text ────────────────────────────────── */
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.authorName {
+  font-size: clamp(0.82rem, 1.1vh, 0.95rem);
+  color: #e2e8f0;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.authorMeta {
+  font-size: clamp(0.68rem, 0.9vh, 0.8rem);
+  color: #64748b;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* ─── Mobile: 1컬럼, 자연 높이 ──────────────────── */
+@media (max-width: 900px) {
+  .section {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding: 80px 20px 60px;
+  }
+
+  .container {
+    flex: unset;
+    height: auto;
+  }
+
+  .sectionHeader {
+    margin-bottom: 36px;
+  }
+
+  .grid {
+    flex: unset;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 24px;
+    gap: 12px;
+  }
+
+  .quote {
+    font-size: 0.9rem;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 16px 48px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}

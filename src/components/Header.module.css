@@ -4,13 +4,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 84px;
-  background-color: #000000cf;
   z-index: 1000;
   box-shadow: 0 2px 5px #01359cd1;
-  display: flex;
-  align-items: center;
-  transition: height 0.25s ease, background-color 0.25s ease;
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: background-color 0.25s ease;
+}
+
+.scrolled {
+  background-color: rgba(0, 0, 0, 0.97) !important;
 }
 
 /* ─── Nav Container ─────────────────────────────── */
@@ -22,6 +23,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1.25rem;
+  height: 84px;
 }
 
 /* ─── Logo ──────────────────────────────────────── */
@@ -40,6 +42,7 @@
   justify-content: center;
   width: 70px;
   height: 74px;
+  flex-shrink: 0;
   overflow: hidden;
 }
 
@@ -74,9 +77,11 @@
   color: #e2e8f0;
   text-decoration: none;
   font-weight: 500;
-  font-size: clamp(0.75rem, 1.2vw, 0.92rem);
+  font-size: clamp(0.65rem, 2vw, 0.92rem);
   transition: color 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .navLink:hover {
@@ -85,19 +90,14 @@
 }
 
 /* ─── Language Switcher ─────────────────────────── */
-.langSwitchWrapper {
-  display: flex;
-  align-items: center;
-}
-
 .pillContainer {
   display: flex;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 3px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 92px;
-  margin-left: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 88px;
+  flex-shrink: 0;
 }
 
 .pillButton {
@@ -107,7 +107,7 @@
   color: #94a3b8;
   padding: 5px 0;
   border-radius: 999px;
-  font-size: clamp(0.65rem, 1vw, 0.72rem);
+  font-size: 0.72rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -122,6 +122,62 @@
   box-shadow: 0 0 12px rgba(255, 184, 0, 0.4);
 }
 
+/* navList 안의 pill은 왼쪽 여백 */
+.navList li:last-child .pillContainer {
+  margin-left: 0.5rem;
+}
+
+/* ─── Mobile Right Group ────────────────────────── */
+.mobileRight {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ─── Hamburger Button ──────────────────────────── */
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+  color: #e2e8f0;
+}
+
+/* ─── Mobile Dropdown Menu ──────────────────────── */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.97);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.25rem 0 0.75rem;
+}
+
+.mobileNavLink {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.mobileNavLink:last-child {
+  border-bottom: none;
+}
+
+.mobileNavLink:hover {
+  color: #ffb800;
+  background-color: rgba(255, 184, 0, 0.06);
+}
+
 /* ─── Responsive ────────────────────────────────── */
 @media (max-width: 1024px) {
   .navList {
@@ -130,11 +186,8 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    height: 56px;
-  }
-
   .nav {
+    height: 56px;
     padding: 0 1rem;
   }
 
@@ -152,45 +205,44 @@
   }
 
   .navList {
-    gap: 0.9rem;
+    display: none;
+  }
+
+  .mobileRight {
+    display: flex;
   }
 
   .pillContainer {
     width: 80px;
-    margin-left: 0.5rem;
-  }
-
-  .pillButton {
-    padding: 4px 0;
   }
 }
 
 @media (max-width: 480px) {
-  .header {
-    height: 52px;
-  }
-
   .nav {
+    height: 52px;
     padding: 0 0.75rem;
   }
+
   .name {
-    display: none;
+    /* display: none; */
   }
+
   .imgContainer {
     width: 28px;
     height: 40px;
   }
 
   .logoImage {
-    height: 54px;
-  }
-
-  .navList {
-    gap: 0.5rem;
+    height: 50px;
   }
 
   .pillContainer {
     width: 72px;
-    margin-left: 0.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .imgContainer {
+    display: none;
   }
 }
