@@ -8,9 +8,9 @@ function ClosureNotice() {
           안내
         </h2>
         <p className={styles.message}>
-          안녕하세요.
+          Rad Science는 2026년 07월 11일 부로 
           <br />
-          저희 회사가 법인 전환하여 아래의 리뉴얼된 페이지로 안내드립니다.
+           법인 전환하여 기존 페이지 운영을 중단합니다.
         </p>
         <a
           className={styles.link}
@@ -18,7 +18,7 @@ function ClosureNotice() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://radscience.ai.kr/
+          리뉴얼 페이지 바로가기
         </a>
       </div>
     </div>
