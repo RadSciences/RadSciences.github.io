@@ -65,7 +65,7 @@ export default function Contact() {
     };
   }, [isInView]);
 
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', org: '', email: '', message: '' });
   const [isSending, setIsSending] = useState(false);
 
   const handleChange = (field) => (e) =>
@@ -83,6 +83,7 @@ export default function Contact() {
           receiver_email: 'contact@radscience.kr',
           email_subject: `[NEW INQUIRY] ${formData.name}님으로부터`,
           from_name: formData.name,
+          from_org: formData.org,
           from_email: formData.email,
           user_message: formData.message,
         },
@@ -90,7 +91,7 @@ export default function Contact() {
       );
 
       alert(isKo ? '문의가 성공적으로 접수되었습니다.' : 'Inquiry submitted successfully.');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', org: '', email: '', message: '' });
     } catch (error) {
       console.error('전송 오류:', error);
       alert(isKo ? '전송 중 오류가 발생했습니다.' : 'An error occurred during submission.');
@@ -169,6 +170,14 @@ export default function Contact() {
               value={formData.name}
               required
               onChange={handleChange('name')}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              placeholder={isKo ? '소속 기관' : 'Organization'}
+              value={formData.org}
+              onChange={handleChange('org')}
             />
           </div>
           <div className={styles.inputGroup}>

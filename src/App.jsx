@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
+import ClosureNotice from './components/ClosureNotice';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Services from './sections/Services';
@@ -42,6 +43,7 @@ function App() {
   return (
     <div className="app-container">
       <ScrollToTop />
+      <ClosureNotice />
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
